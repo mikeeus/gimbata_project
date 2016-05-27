@@ -1,0 +1,43 @@
+<div class="nav-side-menu">
+  <!-- Logo -->
+  
+
+  <div class="menu-list">
+    <ul id="menu-content" class="menu-content collapse out">
+    <% if true #user_signed_in? %>
+      <li>
+        <%= link_to root_path do %>
+          <i class="material-icons">home</i> Dashboard
+        <% end %>
+      </li>
+
+      <li  data-toggle="collapse" data-target="#company-nav" class="menu-link collapsed">
+        <%= link_to '#' do %>
+          <i class="material-icons">business_center</i> Company Name
+          <i class="material-icons expand-more">expand_more</i>
+        <% end %>
+      </li>
+      <ul class="sub-menu collapse" id="company-nav">
+        <% 5.times do |n| %>
+          <li><i class="material-icons chevron-right">chevron_right</i><a href="#">Option #<%= n+1 %></a></li>
+        <% end %>
+      </ul>
+
+
+      <li data-toggle="collapse" data-target="#projects-nav" class="menu-link collapsed">
+        <%= link_to '#' do %>
+          <i class="material-icons">location_city</i> Projects
+          <i class="material-icons expand-more">expand_more</i>
+        <% end %>
+      </li>  
+      <ul class="sub-menu collapse" id="projects-nav">
+        <li><i class="material-icons chevron-right">chevron_right</i>Dessie Primary School</li>
+        <li><i class="material-icons chevron-right">chevron_right</i>Mekele Water Project</li>
+        <li><i class="material-icons chevron-right">chevron_right</i>This is an example of a really long project name that won't fit on the screen</li>
+      </ul>
+
+      <% end %>
+
+    </ul>
+  </div>
+</div>

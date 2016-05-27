@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require bootstrap-plugins/bootstrap-editable.min
 //= require bootstrap-material-design/material
 //= require bootstrap-material-design/ripples

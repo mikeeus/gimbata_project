@@ -17,7 +17,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 # Use to import google's material icons
 gem 'material_icons'
-
+# Use paperclip for file storage
+gem 'paperclip', "~> 5.0.0.beta1"
 # Use turbolinks for faster page loading
 # gem 'turbolinks', '~> 5.0.0.beta'
 
