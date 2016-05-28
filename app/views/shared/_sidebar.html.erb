@@ -18,9 +18,7 @@
         <% end %>
       </li>
       <ul class="sub-menu collapse" id="company-nav">
-        <% 5.times do |n| %>
-          <li><i class="material-icons chevron-right">chevron_right</i><a href="#">Option #<%= n+1 %></a></li>
-        <% end %>
+        <li><i class="material-icons chevron-right">chevron_right</i><a href="#">Files</a></li>
       </ul>
 
 
@@ -31,9 +29,9 @@
         <% end %>
       </li>  
       <ul class="sub-menu collapse" id="projects-nav">
-        <li><i class="material-icons chevron-right">chevron_right</i>Dessie Primary School</li>
-        <li><i class="material-icons chevron-right">chevron_right</i>Mekele Water Project</li>
-        <li><i class="material-icons chevron-right">chevron_right</i>This is an example of a really long project name that won't fit on the screen</li>
+        <% current_company.projects.each do |project| %>
+          <li><i class="material-icons chevron-right">chevron_right</i><%= project.name %></li>
+        <% end %>
       </ul>
 
       <% end %>

@@ -8,10 +8,13 @@
 </head>
 <body>
 <%= render 'shared/header' %>
-  <div class="sidebar-collapsed" id="sidebar">
-    <%= render 'shared/sidebar_button' %>
-    <%= render 'shared/sidebar' %>
-  </div>
+
+  <% unless @disable_sidebar %>
+    <div class="sidebar-collapsed" id="sidebar">
+      <%= render 'shared/sidebar_button' %>
+      <%= render 'shared/sidebar' %>
+    </div>
+  <% end %>
   <div id="content">
     <div class="container-fluid">
       <%= yield %>

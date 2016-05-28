@@ -20,13 +20,14 @@ User.create!(
   first_name: "Mikias",
   last_name: "Abera",
   position: "Office Manager",
-  admin: true,
+  role: 2,
   email: "mikias@gimbata.com",
   password: "password",
   password_confirmation: "password"
 )
 
 Project.create!(
+  company_id: 1,
   name: "40/60 Saving House Project",
   location: "Bole Bulebula",
   description: "40/60 subsidized housing project.",
@@ -35,6 +36,7 @@ Project.create!(
 )
 
 Project.create!(
+  company_id: 1,
   name: "Dehdessa Primary Hospital",
   location: "I/A Bora Zone",
   description: "Primary Hospital.",

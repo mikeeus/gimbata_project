@@ -1,3 +1,52 @@
+/* NAVIGATION*/
+
+  /* Fix navbar-right padding */
+  #main-navbar{
+    padding-right: 15px;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+    border: 0;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .material-icons{
+      margin-bottom: 3px;
+      margin-right: 10px;
+  }
+
+  ul.nav-tabs.project-nav{
+    /*material design shadow*/
+    -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 2px;
+    border: 0;
+    background: #4CAF50;
+    li{
+      vertical-align: middle;
+    }
+    li:hover{
+      background-color: #2E7D32;
+      -webkit-transition: all 1s ease;
+      -moz-transition: all 1s ease;
+      -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+  }
+
+/*SCROLLBAR*/
+  #mCSB_1_container{
+    margin-right:15px;
+  }
+  #mCSB_2_container{
+    margin-right:15px;
+  }
+  
 /*CONTENT*/
   #content{
     z-index: -1;
