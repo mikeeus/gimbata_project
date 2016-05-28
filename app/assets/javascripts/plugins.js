@@ -11,10 +11,10 @@ $(document).ready(function(){
 $(window).load(function(){
 
   $('#content, .nav-side-menu').mCustomScrollbar({
-    // axis: 'y',
-    // scrollInertia: 200,
-    // mouseWheel: true,
-    // autoHideScrollbar: true
+    axis: 'y',
+    scrollInertia: 400,
+    mouseWheel: true,
+    autoHideScrollbar: true
   });
   
 });
