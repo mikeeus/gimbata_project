@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # Use to import google's material icons
 gem 'material_icons'
+# Use bootstrap-material-design for styling
+# gem 'bootstrap-material-design'
 # Use paperclip for file storage
 gem 'paperclip', "~> 5.0.0.beta1"
 # Use turbolinks for faster page loading

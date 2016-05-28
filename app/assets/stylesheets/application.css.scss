@@ -12,10 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require material_icons
  *= require bootstrap-material-design/bootstrap-material-design
  *= require bootstrap-material-design/ripples
  *= require jquery-plugins/jquery.mCustomScrollbar
+ *= require material_icons
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
