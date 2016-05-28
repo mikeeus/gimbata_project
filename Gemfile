@@ -7,14 +7,10 @@ gem 'rails', '4.2.4'
 gem 'pg'
 # Use thin server to handle web requests
 gem 'thin'
-# Use to use datatables
-gem 'jquery-datatables-rails', '~> 3.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# Use bootstrap-sass for styling
-gem 'bootstrap-sass'
 # Use to import google's material icons
 gem 'material_icons'
 # Use paperclip for file storage
@@ -30,11 +26,11 @@ gem "js-routes"
 # Use devise for user authentication
 gem 'devise'
 # Use sprockets
-gem 'sprockets', "~> 2.0"
-# Use bower for managing assets
-gem 'bower-rails'
+gem 'sprockets', '~> 3.0'
 # Use faker to generate fake data models
 gem 'faker'
+# Use bootstrap-sass for styling
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

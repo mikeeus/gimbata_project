@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-plugins/bootstrap-editable.min
+//= require bootstrap
 //= require bootstrap-material-design/material
 //= require bootstrap-material-design/ripples
 //= require jquery-plugins/jquery.mCustomScrollbar.concat.min
-//= require other-plugins/Chart.bundle.min
-//= require dataTables/datatables.min
 //= require_tree .

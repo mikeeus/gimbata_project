@@ -12,12 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap-plugins/bootstrap-editable
+ *= require material_icons
  *= require bootstrap-material-design/bootstrap-material-design
  *= require bootstrap-material-design/ripples
  *= require jquery-plugins/jquery.mCustomScrollbar
- *= require material_icons
- *= require dataTables/datatables.min
  */
-@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
