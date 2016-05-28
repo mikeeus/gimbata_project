@@ -1,0 +1,38 @@
+/*CONTENT*/
+  #content{
+    z-index: -1;
+    overflow-y: hidden;
+    padding-top: 15px;
+    min-width: 200px;
+    margin-left: 0px;
+  }
+  @media(min-width: 1200px){
+    #content{
+      padding-top: 30px;
+    }
+  }
+  @media(min-width: 768px){
+    #content{
+    }
+  } 
+  @media(max-width: 767px){
+    #content{
+    }
+  }
+  @media(max-width: 480px){
+    #content{
+    }
+  }
+  @media(max-width: 299px){
+    #content{
+    }
+  }
+
+  #content {
+    /* for the animation */
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
