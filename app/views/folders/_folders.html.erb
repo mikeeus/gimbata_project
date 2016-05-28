@@ -3,10 +3,10 @@
 
   <ul class="nav nav-tabs">
     <% @folders.each do |folder| %>
-      <li role="presentation"><%= link_to folder.name, company_folder_path(current_company, folder) %></li>
+      <li role="presentation"><%= link_to folder.name, company_folder_path(current_company, folder), folder:folder, remote: true %></li>
     <% end %>
   </ul>
   <div class="well" id="folder-window">
-
+    <%= render 'folder', folder: @folders.first %>
   </div>
 </div>

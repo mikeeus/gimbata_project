@@ -15,6 +15,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'material_icons'
 # Use paperclip for file storage
 gem 'paperclip', "~> 5.0.0.beta1"
+# To handle drag and drop uploads
+gem 'dropzonejs-rails'
 # Use aws-sdk gem to allow hosting on amazon s3 servers
 gem 'aws-sdk'
 # Use turbolinks for faster page loading

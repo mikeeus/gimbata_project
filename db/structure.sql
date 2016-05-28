@@ -70,20 +70,51 @@ ALTER SEQUENCE companies_id_seq OWNED BY companies.id;
 
 
 --
+-- Name: documents; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE documents (
+    id integer NOT NULL,
+    folder_id integer,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    file_file_name character varying,
+    file_content_type character varying,
+    file_file_size integer,
+    file_updated_at timestamp without time zone
+);
+
+
+--
+-- Name: documents_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE documents_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: documents_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE documents_id_seq OWNED BY documents.id;
+
+
+--
 -- Name: folders; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE folders (
     id integer NOT NULL,
     company_id integer,
-    project_id integer,
     name character varying DEFAULT 'Reports'::character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    document_file_name character varying,
-    document_content_type character varying,
-    document_file_size integer,
-    document_updated_at timestamp without time zone
+    updated_at timestamp without time zone NOT NULL
 );
 
 
@@ -207,6 +238,13 @@ ALTER TABLE ONLY companies ALTER COLUMN id SET DEFAULT nextval('companies_id_seq
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY documents ALTER COLUMN id SET DEFAULT nextval('documents_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY folders ALTER COLUMN id SET DEFAULT nextval('folders_id_seq'::regclass);
 
 
@@ -233,6 +271,14 @@ ALTER TABLE ONLY companies
 
 
 --
+-- Name: documents_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY documents
+    ADD CONSTRAINT documents_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: folders_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -254,6 +300,20 @@ ALTER TABLE ONLY projects
 
 ALTER TABLE ONLY users
     ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_documents_on_folder_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_documents_on_folder_id ON documents USING btree (folder_id);
+
+
+--
+-- Name: index_folders_on_company_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_folders_on_company_id ON folders USING btree (company_id);
 
 
 --
@@ -292,6 +352,22 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
+-- Name: fk_rails_3623ff8b80; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY folders
+    ADD CONSTRAINT fk_rails_3623ff8b80 FOREIGN KEY (company_id) REFERENCES companies(id);
+
+
+--
+-- Name: fk_rails_404da7ca3d; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY documents
+    ADD CONSTRAINT fk_rails_404da7ca3d FOREIGN KEY (folder_id) REFERENCES folders(id);
+
+
+--
 -- Name: fk_rails_44a549d7b3; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -321,5 +397,7 @@ INSERT INTO schema_migrations (version) VALUES ('20160527174831');
 
 INSERT INTO schema_migrations (version) VALUES ('20160528091253');
 
-INSERT INTO schema_migrations (version) VALUES ('20160528091355');
+INSERT INTO schema_migrations (version) VALUES ('20160528110658');
+
+INSERT INTO schema_migrations (version) VALUES ('20160528110814');
 

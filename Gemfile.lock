@@ -74,6 +74,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dropzonejs-rails (0.7.3)
+      rails (> 3.1)
     erubis (2.7.0)
     eventmachine (1.2.0.1-x86-mingw32)
     execjs (2.7.0)
@@ -220,6 +222,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  dropzonejs-rails
   faker
   jbuilder (~> 2.0)
   jquery-rails

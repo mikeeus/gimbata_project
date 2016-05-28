@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'documents/index'
+
+  get 'documents/create'
+
   get 'folders/show'
 
   get 'folders/index'

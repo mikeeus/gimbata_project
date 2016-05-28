@@ -1,3 +1,7 @@
+<h4>Documents</h4>
 <% folder.documents.each do |document| %>
   <%= document %>
 <% end %>
+<button class="btn btn-primary btn-raised" data-toggle="modal" data-target="#dropzoneModal">Upload document</button>
+
+<%= render 'dropzone_modal' %>
