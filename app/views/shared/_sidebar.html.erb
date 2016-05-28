@@ -4,7 +4,8 @@
 
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
-    <% if true #user_signed_in? %>
+    
+    <% if user_signed_in? %>
       <li>
         <%= link_to dashboard_path, remote: true do %>
           <i class="material-icons">home</i> Dashboard
@@ -35,7 +36,9 @@
         <% end %>
       </ul>
 
-      <% end %>
+    <% else %>
+
+    <% end %>
 
     </ul>
   </div>
