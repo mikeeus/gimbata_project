@@ -13,19 +13,19 @@
 
       <li  data-toggle="collapse" data-target="#company-nav" class="menu-link collapsed">
         <%= link_to '#' do %>
-          <i class="material-icons">business_center</i> Company Name
+          <i class="material-icons">location_city</i> <%= current_company.name %>
           <i class="material-icons expand-more">expand_more</i>
         <% end %>
       </li>
       <ul class="sub-menu collapse" id="company-nav">
-        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Company Show Page", company_path(current_company), remote: true %></li>
-        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Company Files", company_files_path(current_company), remote: true %></li>
+        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Show Page", company_path(current_company), remote: true %></li>
+        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Files", company_files_path(current_company), remote: true %></li>
       </ul>
 
 
       <li data-toggle="collapse" data-target="#projects-nav" class="menu-link collapsed">
         <%= link_to '#' do %>
-          <i class="material-icons">location_city</i> Projects
+          <i class="material-icons">business_center</i> Projects
           <i class="material-icons expand-more">expand_more</i>
         <% end %>
       </li>  
