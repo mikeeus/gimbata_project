@@ -3,6 +3,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.belongs_to :company, index: true, foreign_key: true
       
+      # Basic use information
+      t.string :first_name, null:false
+      t.string :last_name, null: false
+      t.string :position
+
+      # Role for separating admin and other roles
+      t.integer :role, null: false, default: 0
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

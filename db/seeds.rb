@@ -5,3 +5,39 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Company.create!(
+  name: "Trust Construction PLC",
+  phone_number: "123-456-7890",
+  address: "123 Fake Street",
+  city: "Addis Ababa",
+  country: "Ethiopia",
+  description: "A construction company"
+)
+
+User.create!(
+  company_id: 1,
+  first_name: "Mikias",
+  last_name: "Abera",
+  position: "Office Manager",
+  admin: true,
+  email: "mikias@gimbata.com",
+  password: "password",
+  password_confirmation: "password"
+)
+
+Project.create!(
+  name: "40/60 Saving House Project",
+  location: "Bole Bulebula",
+  description: "40/60 subsidized housing project.",
+  client: "Addis Ababa Housing Authority",
+  consultant: "A&B Engineering Consultants"
+)
+
+Project.create!(
+  name: "Dehdessa Primary Hospital",
+  location: "I/A Bora Zone",
+  description: "Primary Hospital.",
+  client: "Oromia Regional State Health Bureau",
+  consultant: "A&B Engineering Consultants"
+)
