@@ -6,7 +6,7 @@
     <ul id="menu-content" class="menu-content collapse out">
     <% if true #user_signed_in? %>
       <li>
-        <%= link_to root_path do %>
+        <%= link_to dashboard_path, remote: true do %>
           <i class="material-icons">home</i> Dashboard
         <% end %>
       </li>
@@ -19,7 +19,7 @@
       </li>
       <ul class="sub-menu collapse" id="company-nav">
         <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Company Show Page", company_path(current_company), remote: true %></li>
-        <li><i class="material-icons chevron-right">chevron_right</i><a href="#">Files</a></li>
+        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Company Files", company_files_path(current_company), remote: true %></li>
       </ul>
 
 

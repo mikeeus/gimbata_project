@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'company/show'
-
   devise_for :users
-  get 'dashboard/index'
   root 'static_pages#homepage'
 
   resources :company, only: [:show] do 
     resources :project, only: [:new, :create, :show, :index]
   end
-zz
+
+  get 'dashboard' => 'dashboard#index', as: :dashboard
+  get 'company/:id/files' => 'company#files', as: :company_files
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
