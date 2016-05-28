@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'folders/show'
+
   devise_for :users
   root 'static_pages#homepage'
 
   resources :company, only: [:show] do 
+    resources :folders, only: [:new, :create, :show, :index]
     resources :project, only: [:new, :create, :show, :index]
   end
 

@@ -48,8 +48,3 @@ Folder.create!(
   company_id: 1,
   name: "Documents"
 )
-
-Folder.create!(
-  project_id: 1,
-  name: "Reports"
-)
