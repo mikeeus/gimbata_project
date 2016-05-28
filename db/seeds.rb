@@ -43,3 +43,13 @@ Project.create!(
   client: "Oromia Regional State Health Bureau",
   consultant: "A&B Engineering Consultants"
 )
+
+Folder.create!(
+  company_id: 1,
+  name: "Documents"
+)
+
+Folder.create!(
+  project_id: 1,
+  name: "Reports"
+)
