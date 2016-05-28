@@ -12,6 +12,13 @@ $(document).ready(function(){
   // Collapses sidebar whenever window size is changed
   $(window).resize(collapseSidebar);
 
+
+  // Fixes bootstrap dropdown menus sticking
+  $(".dropdown-menu a").click(function() {
+    $(this).closest(".dropdown-menu").prev().dropdown("toggle");
+  });
+
+
 });
 
 // Collapses sidebar

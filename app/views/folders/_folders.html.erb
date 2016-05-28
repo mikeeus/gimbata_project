@@ -1,0 +1,12 @@
+<div class="container-fluid folders-container">
+  <h1>Folders</h1>
+
+  <ul class="nav nav-tabs">
+    <% @folders.each do |folder| %>
+      <li role="presentation"><%= link_to folder.name, company_folder_path(current_company, folder) %></li>
+    <% end %>
+  </ul>
+  <div class="well" id="folder-window">
+
+  </div>
+</div>

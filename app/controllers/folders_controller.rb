@@ -1,4 +1,5 @@
-class FolderController < ApplicationController
+class FoldersController < ApplicationController
+  respond_to :html, :js
 
   def show
     @folder = current_company.folders.find(params[:id])
@@ -7,7 +8,4 @@ class FolderController < ApplicationController
   def index
     @folders = current_company.folders
   end
-
-  private
-
 end

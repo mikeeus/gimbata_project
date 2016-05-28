@@ -10,7 +10,7 @@ $(document).ready(function(){
 // Custom Scrollbar
 $(window).load(function(){
 
-  $('#content, .nav-side-menu').mCustomScrollbar({
+  $('.nav-side-menu').mCustomScrollbar({
     axis: 'y',
     scrollInertia: 400,
     mouseWheel: true,
