@@ -1,0 +1,16 @@
+<%= form_for(@document, url: folder_documents_path, html: { class:"dropzone", id:"document-upload"}, multipart: true) do |f| %>
+
+  <% if true %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Upload Document' %>
+    </div>
+  <% end %>
+<% end %>

@@ -6,6 +6,10 @@ module ApplicationHelper
     end
   end
 
+  def company_folders
+    @folders = current_company.folders
+  end
+
   # VIEWS  
   def disable_sidebar
     @disable_sidebar = true

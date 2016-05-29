@@ -1,25 +1,12 @@
 Rails.application.routes.draw do
-  get 'documents/index'
-
-  get 'documents/create'
-
-  get 'folders/show'
-
-  get 'folders/index'
-
-  get 'folder/show'
-
-  get 'folder/index'
-
-  get 'folders/show'
-
   devise_for :users
   root 'static_pages#homepage'
 
-  resources :company, only: [:show] do 
-    resources :folders, only: [:new, :create, :show, :index]
-    resources :projects, only: [:new, :create, :show, :index]
+  resources :company, only: [:show]
+  resources :folders, only: [:new, :create, :show, :index] do
+    resources :documents, only: [:new, :create, :show, :index]
   end
+  resources :projects, only: [:new, :create, :show, :index]
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'company/:id/files' => 'company#files', as: :company_files

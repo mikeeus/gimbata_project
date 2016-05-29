@@ -20,21 +20,22 @@
       </li>
       <ul class="sub-menu collapse" id="company-nav">
         <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Show Page", company_path(current_company), remote: true %></li>
-        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Folders", company_folders_path(current_company), remote: true %></li>
+        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Folders", folders_path(current_company) %></li>
       </ul>
 
-
-      <li data-toggle="collapse" data-target="#projects-nav" class="menu-link collapsed">
-        <%= link_to '#' do %>
-          <i class="material-icons">business_center</i> Projects
-          <i class="material-icons expand-more">expand_more</i>
-        <% end %>
-      </li>  
-      <ul class="sub-menu collapse" id="projects-nav">
-        <% current_company.projects.each do |project| %>
-          <li><i class="material-icons chevron-right">chevron_right</i><%= project.name %></li>
-        <% end %>
-      </ul>
+      <% if false %>
+        <li data-toggle="collapse" data-target="#projects-nav" class="menu-link collapsed">
+          <%= link_to '#' do %>
+            <i class="material-icons">business_center</i> Projects
+            <i class="material-icons expand-more">expand_more</i>
+          <% end %>
+        </li>  
+        <ul class="sub-menu collapse" id="projects-nav">
+          <% current_company.projects.each do |project| %>
+            <li><i class="material-icons chevron-right">chevron_right</i><%= project.name %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
     <% else %>
 
