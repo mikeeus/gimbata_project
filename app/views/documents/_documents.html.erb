@@ -1,13 +1,12 @@
 <%= form_for(@document, url: folder_documents_path(@folder), html: { multipart: true }) do |f|  %>
   <div class="fallback">
     <%= f.file_field :file %><br>
-    <%= f.submit "Upload file" %>
+    <%= f.submit "Upload file", class: "" %>
   </div>
 <% end %>
 
 <div class="documents-folder">
   <% @documents.each do |document| %>
-    <li><%= document.name %></li>
-    <li><%= document.file %></li>
+    <li><%= document.generic_icon_path(:thumb) %></li>
   <% end %>
 </div>
