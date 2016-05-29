@@ -10,10 +10,10 @@ class DocumentsController < ApplicationController
   def create
     @document = @folder.documents.build(document_params)
     if @document.save
-      flash.now[:success] = "Document created!"
+      flash[:success] = "Document created!"
       redirect_to folders_path
     else
-      flash.now[:danger] = "Document upload not successful."
+      flash[:danger] = "Document upload not successful."
       redirect_to folders_path
     end
   end

@@ -16,5 +16,4 @@
 //= require bootstrap-material-design/material
 //= require bootstrap-material-design/ripples
 //= require jquery-plugins/jquery.mCustomScrollbar.concat.min
-//= require other-plugins/dropzone.min
 //= require_tree .

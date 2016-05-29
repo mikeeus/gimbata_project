@@ -1,16 +1,13 @@
-<!-- <form action="/file-upload" class="dropzone">
+<%= form_for(@document, url: folder_documents_path(@folder), html: { multipart: true }) do |f|  %>
   <div class="fallback">
-    <input name="file" type="file" multiple />
+    <%= f.file_field :file %><br>
+    <%= f.submit "Upload file" %>
   </div>
-</form>
- -->
-<% @documents.each do |document| %>
-  <li><%= document.name %></li>
-  <li><%= document.file %></li>
 <% end %>
 
- <% if true %>
-  <button class="btn btn-primary btn-raised" data-toggle="modal" data-target="#dropzoneModal">Upload document</button>
-
-  <%= render 'dropzone_modal' %>
-<% end %>
+<div class="documents-folder">
+  <% @documents.each do |document| %>
+    <li><%= document.name %></li>
+    <li><%= document.file %></li>
+  <% end %>
+</div>
