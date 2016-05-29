@@ -4,7 +4,12 @@
   </div>
 </form>
  -->
-<% if true %>
+<% @documents.each do |document| %>
+  <li><%= document.name %></li>
+  <li><%= document.file %></li>
+<% end %>
+
+ <% if true %>
   <button class="btn btn-primary btn-raised" data-toggle="modal" data-target="#dropzoneModal">Upload document</button>
 
   <%= render 'dropzone_modal' %>

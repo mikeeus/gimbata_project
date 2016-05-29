@@ -1,13 +1,15 @@
-<%= form_for(@document, url: folder_documents_path, html: { class:"dropzone", id:"document-upload"}, multipart: true) do |f| %>
+<%= form_for(@document, url: folder_documents_path, multipart: true) do |f| %>
 
   <% if true %>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, class: "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :file %>
-      <%= f.file_field :file %>
+      <div class="dropzone">
+        <%= f.file_field :file, class: "form-control" %>
+      </div>
     </div>
     <div class="actions">
       <%= f.submit 'Upload Document' %>

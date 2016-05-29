@@ -3,17 +3,19 @@ class DocumentsController < ApplicationController
   respond_to :html, :js
 
   def index
-    @document = @folder.documents.build
+    @documents = @folder.documents
+    @document = @documents.build
   end
 
   def create
     @document = @folder.documents.build(document_params)
-    # if @document.save
-    #   # redirect_to @document
-    #   flash.now[:success] = "Document created!"
-    # else
-    #   flash.now[:danger] = "Document upload not successful."
-    # end
+    if @document.save
+      flash.now[:success] = "Document created!"
+      redirect_to folders_path
+    else
+      flash.now[:danger] = "Document upload not successful."
+      redirect_to folders_path
+    end
   end
 
   private
