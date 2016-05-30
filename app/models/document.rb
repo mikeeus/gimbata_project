@@ -11,13 +11,5 @@ class Document < ActiveRecord::Base
         "image/png", "image/gif", "text/csv"]},
       message: "Sorry, only Images (png, gif, jpeg or png), PDF, Excel, MSWord or plain text files are allowed."
 
-  # def generic_icon_path(style = file.default_style)
-  #   url = "/images/documents/icon.#{style.to_s}.#{file.content_type.sub('/', '.')}.png"
-  #   if File.exists? "~/app/assets/#{url}"
-  #     url
-  #   else
-  #     "/images/documents/icon.#{style.to_s}.default.png"
-  #   end
-  # end
-  
+
 end

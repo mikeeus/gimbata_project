@@ -7,6 +7,10 @@
 
 <div class="documents-folder">
   <% @documents.each do |document| %>
-    <li><%= document.generic_icon_path(:thumb) %></li>
+    <li>
+      <%= document.name %>
+      <%= image_tag 'icon.jpg' %>
+      <!-- DisplayDocument.new(document) -->
+    </li>
   <% end %>
 </div>
