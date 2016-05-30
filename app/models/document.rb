@@ -12,4 +12,17 @@ class Document < ActiveRecord::Base
       message: "Sorry, only Images (png, gif, jpeg or png), PDF, Excel, MSWord or plain text files are allowed."
 
 
+  def icon_url
+    if !self.file_content_type.nil?
+      content_type = self.file_content_type.sub('/','_')
+      url = "#{content_type}.png"
+      if File.exists? url
+        url
+      else
+        "icon_default.png"
+      end
+    else
+      "icon_default.png"
+    end
+  end
 end

@@ -1,16 +1,23 @@
-<%= form_for(@document, url: folder_documents_path(@folder), html: { multipart: true }) do |f|  %>
-  <div class="fallback">
-    <%= f.file_field :file %><br>
-    <%= f.submit "Upload file", class: "" %>
-  </div>
-<% end %>
+<div class="row">
+  <%= form_for(@document, url: folder_documents_path(@folder), html: { multipart: true }) do |f|  %>
+      <div class="">
+        <%= f.file_field :file %><br>
+      </div>
 
-<div class="documents-folder">
-  <% @documents.each do |document| %>
-    <li>
-      <%= document.name %>
-      <%= image_tag 'icon.jpg' %>
-      <!-- DisplayDocument.new(document) -->
-    </li>
+      <%= f.submit "Upload file", class: "btn btn-primary" %>
   <% end %>
+</div>
+
+<div class="row">
+  <div class="container-fluid">
+      <% @documents.each do |document| %>
+        <div class="panel panel-default">
+          <div class="panel-body">
+        <!--     <div class="document-delete">link_to "Delete", folder_document_path(@folder, document), method: :delete, data: { confirm: "Are you sure?"} </div> -->
+            <div class="document-file-type">File Type: <%= document.file_content_type %></div>
+            <div class="document-name">Name: <%= document.name %></div>
+          </div>
+        </div>
+      <% end %>
+  </div>
 </div>
