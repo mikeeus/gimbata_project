@@ -9,20 +9,25 @@ class DocumentsController < ApplicationController
 
   def create
     @document = @folder.documents.build(document_params)
-    if @document.save
-      flash[:success] = "Document created!"
-      redirect_to folders_path
-    else
-      flash[:danger] = "Document upload not successful."
-      redirect_to folders_path
+    respond_to do |format|
+      if @document.save
+        format.html { render action: 'index', notice: "Document created!" }
+        format.js {}
+        format.json { render json: @document, status: :created, location: @document }
+      else
+        format.html { render action: 'index'}
+        format.json { render json: @document.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @document = @folder.documents.find_by(id: params[:id])
     @document.destroy
-    flash[:success] = "Document has been deleted."
-    redirect_to folders_path
+    respond_to do |format|
+      format.html {render action: 'index', notice: "Document has been deleted." }
+      format.js {}
+    end
   end
 
   private

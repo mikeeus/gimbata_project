@@ -1,5 +1,6 @@
 <div class="row">
-  <%= form_for(@document, url: folder_documents_path(@folder), html: { multipart: true }) do |f|  %>
+  <h4><%= @folder.name %></h4>
+  <%= form_for(@document, url: folder_documents_path(@folder), remote: true, html: { multipart: true }) do |f|  %>
       <div class="">
         <%= f.file_field :file %><br>
       </div>
@@ -10,14 +11,24 @@
 
 <div class="row">
   <div class="container-fluid">
+    <% unless false #@documents.nil? %>
       <% @documents.each do |document| %>
-        <div class="panel panel-default">
-          <div class="panel-body">
-        <!--     <div class="document-delete">link_to "Delete", folder_document_path(@folder, document), method: :delete, data: { confirm: "Are you sure?"} </div> -->
-            <div class="document-file-type">File Type: <%= document.file_content_type %></div>
-            <div class="document-name">Name: <%= document.name %></div>
+        <% unless document.id == nil %>
+          <div class="panel panel-default document-panel">
+            <div class="panel-body document-panel-body">
+              <% if current_user.role == "admin" %>
+                <%= link_to folder_document_path(@folder, document), remote: true, class: "document-delete", method: :delete, data: { confirm: "Are you sure?"} do %>
+                  <i class="material-icons">clear</i>
+                <% end %>
+              <% end %>
+              <div class="document-file-type">
+                File Type: <%= document.file_content_type %>
+              </div>
+              <div class="document-name">Name: <%= document.name %></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
+    <% end %>
   </div>
 </div>

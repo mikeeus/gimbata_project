@@ -76,7 +76,7 @@ ALTER SEQUENCE companies_id_seq OWNED BY companies.id;
 CREATE TABLE documents (
     id integer NOT NULL,
     folder_id integer,
-    name character varying,
+    name character varying DEFAULT 'Document'::character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
     file_file_name character varying,
@@ -112,7 +112,7 @@ ALTER SEQUENCE documents_id_seq OWNED BY documents.id;
 CREATE TABLE folders (
     id integer NOT NULL,
     company_id integer,
-    name character varying DEFAULT 'Reports'::character varying NOT NULL,
+    name character varying DEFAULT 'Folder'::character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -135,42 +135,6 @@ CREATE SEQUENCE folders_id_seq
 --
 
 ALTER SEQUENCE folders_id_seq OWNED BY folders.id;
-
-
---
--- Name: projects; Type: TABLE; Schema: public; Owner: -
---
-
-CREATE TABLE projects (
-    id integer NOT NULL,
-    company_id integer,
-    name character varying NOT NULL,
-    location character varying NOT NULL,
-    description character varying,
-    client character varying,
-    consultant character varying,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
-);
-
-
---
--- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE projects_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
 
 
 --
@@ -252,13 +216,6 @@ ALTER TABLE ONLY folders ALTER COLUMN id SET DEFAULT nextval('folders_id_seq'::r
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
@@ -287,14 +244,6 @@ ALTER TABLE ONLY folders
 
 
 --
--- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY projects
-    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
-
-
---
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -314,13 +263,6 @@ CREATE INDEX index_documents_on_folder_id ON documents USING btree (folder_id);
 --
 
 CREATE INDEX index_folders_on_company_id ON folders USING btree (company_id);
-
-
---
--- Name: index_projects_on_company_id; Type: INDEX; Schema: public; Owner: -
---
-
-CREATE INDEX index_projects_on_company_id ON projects USING btree (company_id);
 
 
 --
@@ -368,14 +310,6 @@ ALTER TABLE ONLY documents
 
 
 --
--- Name: fk_rails_44a549d7b3; Type: FK CONSTRAINT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY projects
-    ADD CONSTRAINT fk_rails_44a549d7b3 FOREIGN KEY (company_id) REFERENCES companies(id);
-
-
---
 -- Name: fk_rails_7682a3bdfe; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -392,8 +326,6 @@ SET search_path TO "$user", public;
 INSERT INTO schema_migrations (version) VALUES ('20160527174543');
 
 INSERT INTO schema_migrations (version) VALUES ('20160527174740');
-
-INSERT INTO schema_migrations (version) VALUES ('20160527174831');
 
 INSERT INTO schema_migrations (version) VALUES ('20160528091253');
 

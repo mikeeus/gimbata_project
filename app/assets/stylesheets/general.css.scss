@@ -16,12 +16,12 @@
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-
-  .material-icons{
-      margin-bottom: 3px;
-      margin-right: 10px;
+  .nav-side-menu{
+    .material-icons{
+        margin-bottom: 3px;
+        margin-right: 10px;
+    }
   }
-
   ul.nav-tabs.project-nav{
     /*material design shadow*/
     -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);

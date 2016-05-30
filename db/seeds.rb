@@ -26,25 +26,22 @@ User.create!(
   password_confirmation: "password"
 )
 
-Project.create!(
+Folder.create!(
   company_id: 1,
-  name: "40/60 Saving House Project",
-  location: "Bole Bulebula",
-  description: "40/60 subsidized housing project.",
-  client: "Addis Ababa Housing Authority",
-  consultant: "A&B Engineering Consultants"
-)
-
-Project.create!(
-  company_id: 1,
-  name: "Dehdessa Primary Hospital",
-  location: "I/A Bora Zone",
-  description: "Primary Hospital.",
-  client: "Oromia Regional State Health Bureau",
-  consultant: "A&B Engineering Consultants"
+  name: "40/60 Condominiums"
 )
 
 Folder.create!(
   company_id: 1,
-  name: "Documents"
+  name: "Dedhessa Primary Hospital"
+)
+
+Folder.create!(
+  company_id: 1,
+  name: "Wogeda Primary Hospital"
+)
+
+Folder.create!(
+  company_id: 1,
+  name: "Dessie UCBP"
 )
