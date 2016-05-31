@@ -5,5 +5,9 @@
     <li role="presentation"><%= link_to "Other Folder", '#', remote: true %></li>
   </ul>
   <div class="well" id="folder-window">
-    Select a folder above
+    <% if @folder %>
+      <%= render 'documents/documents', folder: @folder %>
+    <% else %>
+      Select a folder above
+    <% end %>
   </div>

@@ -1,17 +1,12 @@
 <div class="row">
-  <h4><%= @folder.name %></h4>
-  <%= form_for(@document, url: folder_documents_path(@folder), remote: true, html: { multipart: true }) do |f|  %>
-      <div class="">
-        <%= f.file_field :file %><br>
-      </div>
-
-      <%= f.submit "Upload file", class: "btn btn-primary" %>
-  <% end %>
+  <div class="container-fluid">
+    <button type="button" class="btn btn-lg btn-raised btn-primary" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
+      <%= render 'documents/document_upload_modal' %>
+  </div>  
 </div>
 
 <div class="row">
   <div class="container-fluid">
-    <% unless false #@documents.nil? %>
       <% @documents.each do |document| %>
         <% unless document.id == nil %>
           <div class="panel panel-default document-panel">
@@ -29,6 +24,5 @@
           </div>
         <% end %>
       <% end %>
-    <% end %>
   </div>
 </div>

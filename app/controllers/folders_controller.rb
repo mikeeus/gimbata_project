@@ -7,6 +7,11 @@ class FoldersController < ApplicationController
 
   def index
     @folders = company_folders
+    if params[:folder]
+      @folder = company_folders.find(params[:folder])
+      @document = @folder.documents.build
+      @documents = @folder.documents
+    end
   end
 
   private

@@ -7,6 +7,10 @@
     <% end %>
   </ul>
   <div class="well" id="folder-window">
-    Select a folder above
+    <% unless @folder.nil? %>
+      <%= render 'documents/documents', folder: @folder %>
+    <% else %>
+      Select a folder above
+    <% end %>
   </div>
 </div>

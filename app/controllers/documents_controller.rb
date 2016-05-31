@@ -1,9 +1,8 @@
 class DocumentsController < ApplicationController
-  before_action :correct_folder, only: [:index, :create, :destroy]
+  before_action :correct_folder_and_documents, only: [:index, :create, :destroy]
   respond_to :html, :js
 
   def index
-    @documents = @folder.documents
     @document = @documents.build
   end
 
@@ -11,12 +10,11 @@ class DocumentsController < ApplicationController
     @document = @folder.documents.build(document_params)
     respond_to do |format|
       if @document.save
-        format.html { render action: 'index', notice: "Document created!" }
+        format.html { redirect_to controller: 'folders', action: 'index', remote: true, folder: @folder }
         format.js {}
-        format.json { render json: @document, status: :created, location: @document }
       else
         format.html { render action: 'index'}
-        format.json { render json: @document.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -32,8 +30,9 @@ class DocumentsController < ApplicationController
 
   private
 
-    def correct_folder
+    def correct_folder_and_documents
       @folder = company_folders.find(params[:folder_id])
+      @documents = @folder.documents
     end
 
     def document_params

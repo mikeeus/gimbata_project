@@ -60,7 +60,7 @@ font-color: rgba(255,255,255,0.84);
     -ms-transition: all 0.4s ease;
     transition: all 0.4s ease;
     margin-top: 5px;
-    margin-left: 305px;
+    margin-left: 250px;
     border-radius: 3px;
     position: absolute;
     z-index: 1000;
@@ -82,7 +82,11 @@ font-color: rgba(255,255,255,0.84);
     #sidebar-toggle{
     }
   }
-
+  .sidebar-collapsed{
+    #sidebar-toggle{
+      margin-left: 305px;
+    }
+  }
 
 
 

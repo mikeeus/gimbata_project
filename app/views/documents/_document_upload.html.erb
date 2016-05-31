@@ -1,0 +1,15 @@
+<%= form_for(@document, url: folder_documents_path(@folder), remote: true, format: :js) do |f|  %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <div>
+      <label class="btn btn-default btn-raised btn-file">
+        <%= f.label :file, 'Click here to choose file' %>
+        <%= f.file_field :file, onchange:"$('#upload-file-info').html($(this).val());" %><br>
+      </label>
+      <span class='label label-default' id="upload-file-info"></span>
+    </div>
+
+    <%= f.submit "Upload file", class: "btn btn-primary" %>
+<% end %>
