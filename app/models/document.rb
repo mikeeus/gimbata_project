@@ -14,8 +14,8 @@ class Document < ActiveRecord::Base
 
   def icon_url
     if !self.file_content_type.nil?
-      content_type = self.file_content_type.sub('/','_')
-      url = "#{content_type}.png"
+      content_type = self.file_content_type
+      url = content_type
       if File.exists? url
         url
       else
