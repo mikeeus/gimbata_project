@@ -7,22 +7,34 @@
 
 <div class="row">
   <div class="container-fluid">
+    <% if @documents.count > 0 %>
+
+      <!-- Display each document as panel -->
       <% @documents.each do |document| %>
         <% unless document.id == nil %>
           <div class="panel panel-default document-panel">
             <div class="panel-body document-panel-body">
+              
+              <!-- Delete document link for admin -->
               <% if current_user.role == "admin" %>
                 <%= link_to folder_document_path(@folder, document), remote: true, class: "document-delete", method: :delete, data: { confirm: "Are you sure?"} do %>
                   <i class="material-icons">clear</i>
                 <% end %>
               <% end %>
+
               <div class="document-file-type">
                 File Type: <%= document.file_content_type %>
               </div>
-              <div class="document-name">Name: <%= document.name %></div>
+              <div class="document-name">
+                Name: <%= document.name %>
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
+    <% else %>
+      <!-- Message for empty folder -->
+      <p>You have no files in this folder. Use the button above to upload a file.</p>
+    <% end %>
   </div>
 </div>

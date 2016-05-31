@@ -1,13 +1,12 @@
-  <ul class="nav nav-tabs">
-    <% @folders.each do |folder| %>
-      <li role="presentation"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
-    <% end %>
-    <li role="presentation"><%= link_to "Other Folder", '#', remote: true %></li>
-  </ul>
-  <div class="well" id="folder-window">
-    <% if @folder %>
-      <%= render 'documents/documents', folder: @folder %>
-    <% else %>
-      Select a folder above
-    <% end %>
-  </div>
+<ul class="nav nav-tabs">
+  <% @folders.each do |folder| %>
+    <li role="presentation"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
+  <% end %>
+</ul>
+<div class="well" id="folder-window">
+  <% if @folder %>
+    <%= render 'documents/documents', folder: @folder %>
+  <% else %>
+    Select a folder above
+  <% end %>
+</div>
