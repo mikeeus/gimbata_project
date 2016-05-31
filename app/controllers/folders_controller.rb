@@ -1,5 +1,5 @@
 class FoldersController < ApplicationController
-  before_action :company_folders, only: [:index, :new, :create, :show]
+  before_action :company_folders, only: [:index, :new, :create, :show, :destroy]
   respond_to :html, :js
 
   def new
@@ -31,6 +31,11 @@ class FoldersController < ApplicationController
     end
   end
 
+  def destroy
+    @folder = @folders.find_by(id: params[:id])
+    @folder.destroy
+    redirect_to folders_path
+  end
   private
 
     def company_folders
