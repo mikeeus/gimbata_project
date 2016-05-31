@@ -1,6 +1,8 @@
 /* FOLDER */
   #folder-tabs{
     background: #3F51B5;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
     /*border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 1px solid #987244;*/
@@ -20,6 +22,10 @@
   }
   .folder-options-button{
     float: right;
+  }
+  .new-folder-button{
+    background: #4CAF50;
+    border-top-right-radius: 3px;
   }
   .documents-folder{
     width: 100%;

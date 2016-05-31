@@ -2,7 +2,7 @@
   <% @folders.each do |folder| %>
     <li role="presentation"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
   <% end %>
-    <li role="presentation"><%= link_to "Create new folder", new_folder_path, remote: true %></li>
+    <li role="presentation" class="new-folder-button" ><%= link_to "Create new folder", new_folder_path, remote: true%></li>
 </ul>
 <div class="well" id="folder-window">
   <% if @folder %>
