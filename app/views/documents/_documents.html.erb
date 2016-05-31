@@ -26,7 +26,13 @@
                 File Type: <%= document.file_content_type %>
               </div>
               <div class="document-name">
-                Name: <%= document.name %>
+                <%= link_to document.name, folder_document_path(@folder, document) %>
+              </div>
+              <div class="document-file-size">
+                <%= link_to document.name, folder_document_path(@folder, document) %>
+              </div>
+              <div class="document-file-update-at">
+                <%= link_to document.name, folder_document_path(@folder, document) %>
               </div>
             </div>
           </div>

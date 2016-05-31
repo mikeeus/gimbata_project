@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs nav-justified" id="folder-tabs">
   <% @folders.each do |folder| %>
     <li role="presentation"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
   <% end %>
