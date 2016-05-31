@@ -3,13 +3,11 @@ Rails.application.routes.draw do
   root 'static_pages#homepage'
 
   resources :company, only: [:show]
-  resources :folders, only: [:new, :create, :show, :index] do
+  resources :folders do
     resources :documents
   end
-  resources :projects, only: [:new, :create, :show, :index]
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
-  get 'company/:id/files' => 'company#files', as: :company_files
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
