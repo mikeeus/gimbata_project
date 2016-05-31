@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
     @document = @folder.documents.find_by(id: params[:id])
     @document.destroy
     respond_to do |format|
-      format.html {render action: 'index', notice: "Document has been deleted." }
+      format.html {}
       format.js {}
     end
   end
