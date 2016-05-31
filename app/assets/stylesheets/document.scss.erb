@@ -1,75 +1,90 @@
-.documents-folder{
-  width: 100%;
-}
-
-.document-image{
-}
-
-.document-name{
-
-}
-
-.document-file-type{
-  float: right;
-}
-
-.document-panel{
-  margin-bottom: 10px;
-  .document-panel-body{
-    padding: 5px;
-    padding-bottom: 0px;
-  }
-  .document-delete{
-    float: right;
-    margin-top: -2px;
-    margin-bottom: 2px;
-    margin-left: 10px;
-    color: #FFFFFF;
-    background: #F44336;
-    border-radius: 2px;
-  }
-}
-
-.btn-file {
-  background-color: #B2EBF2;
-  padding: 8px 15px;
-  input{
-    display: none;
-  }
-  label{
-    margin-bottom: 0px;
-    color: #757575;
-  }
-}
-#upload-file-info{
-  font-size: 15px;
-  /*background: #FF5722;*/
-}
-#document-upload-button{
-  float: right;
-}
-#documentUploadModal{
-  .cancel-button{
-/*    float: right;
-    padding-left: 0px;
-    padding-right: 0px;*/
-  }
-  .submit-button{
-    float: right;
-    margin-top: 0px;
-  }
-}
-
-#folder-tabs{
-  background: #3F51B5;
-  /*border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 1px solid #987244;*/
-  li{
-    vertical-align: middle;
-    /*border-right: 1px solid #987244;
-    border-top-left-radius: 10px;
+/* FOLDER */
+  #folder-tabs{
+    background: #3F51B5;
+    /*border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background: rgb(248, 210, 146);*/
+    border-bottom: 1px solid #987244;*/
+    li{
+      vertical-align: middle;
+      /*border-right: 1px solid #987244;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background: rgb(248, 210, 146);*/
+    }
   }
-}
+  .documents-folder{
+    width: 100%;
+  }
+  .document-panel-body{
+    .document-name{
+      h4{
+        margin: 0;
+      }
+    }
+    .document-file-size, .document-file-update-at{
+      color: #616161;
+    }
+    .document-icon{
+      float: left;
+      height: 58px;
+      width: 58px;
+      margin-right: 10px;
+      img{
+        height: 58px;
+        width: 58px;
+      }
+    }
+  }
+  .document-file-type{
+    float: right;
+  }
+  .document-panel{
+    margin-bottom: 10px;
+    .document-panel-body{
+      padding: 5px;
+    }
+    .document-delete{
+      float: right;
+      margin-top: -2px;
+      margin-bottom: 2px;
+      margin-left: 10px;
+      color: #FFFFFF;
+      background: #F44336;
+      border-radius: 2px;
+    }
+  }
+  #document-upload-button{
+    float: right;
+  }
+
+
+/* DOCUMENT UPLOAD MODAL*/
+  #documentUploadModal{
+    .cancel-button{
+  /*    float: right;
+      padding-left: 0px;
+      padding-right: 0px;*/
+    }
+    .submit-button{
+      float: right;
+      margin-top: 0px;
+    }
+    .progress{
+      margin-top: 10px;
+    }
+  }
+  .btn-file {
+    background-color: #B2EBF2;
+    padding: 8px 15px;
+    input{
+      display: none;
+    }
+    label{
+      margin-bottom: 0px;
+      color: #757575;
+    }
+  }
+  #upload-file-info{
+    font-size: 15px;
+    /*background: #FF5722;*/
+  }

@@ -14,7 +14,9 @@
         <% unless document.id == nil %>
           <div class="panel panel-default document-panel">
             <div class="panel-body document-panel-body">
-              
+              <div class="document-icon">
+                <%= image_tag "#{document.file_content_type}" %>
+              </div>
               <!-- Delete document link for admin -->
               <% if current_user.role == "admin" %>
                 <%= link_to folder_document_path(@folder, document), remote: true, class: "document-delete", method: :delete, data: { confirm: "Are you sure?"} do %>
@@ -23,16 +25,16 @@
               <% end %>
 
               <div class="document-file-type">
-                File Type: <%= document.file_content_type %>
+                <%= document.file_content_type %>
               </div>
               <div class="document-name">
-                <%= link_to document.name, folder_document_path(@folder, document) %>
+                <h4><%= document.name %></h4>
               </div>
               <div class="document-file-size">
-                <%= link_to document.name, folder_document_path(@folder, document) %>
+                <%= number_to_human_size(document.file_file_size) %>
               </div>
               <div class="document-file-update-at">
-                <%= link_to document.name, folder_document_path(@folder, document) %>
+                <%= document.file_updated_at %>
               </div>
             </div>
           </div>
