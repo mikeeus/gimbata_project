@@ -44,8 +44,11 @@
 
               <div class="document-file-type">
                 <% document.file_content_type %>
+                <%= link_to "Download", document.file.url(:original, false) %>
               </div>
-              <!-- Edit in browser -->
+              <div class="document-edit">Edit in browser</div>
+              <!-- MSWord https://writer.zoho.com/writer/remotedoc.im -->
+              <!-- Excel  https://sheet.zoho.com/sheet/remotedoc.im -->
               <!-- Download -->
               <div class="document-name">
                 <h4><%= document.name %></h4>
