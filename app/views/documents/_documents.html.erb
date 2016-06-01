@@ -45,7 +45,7 @@
               <div class="document-file-type">
                 <% document.file_content_type %>
                 <%= link_to "Download", document.file.url(:original, false) %>
-                <%= link_to "Edit", edit_folder_document_path(@folder, document) %>
+                <%= link_to "Edit", edit_folder_document_path(@folder, document), remote: true %>
               </div>
               <!-- <div class="document-edit">Edit in browser</div> -->
               <div class="document-name">
