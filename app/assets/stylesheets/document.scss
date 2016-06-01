@@ -1,6 +1,6 @@
 /* FOLDER */
   #folder-tabs{
-    background: #3F51B5;
+    /*background: #3F51B5;*/
     border-top-right-radius: 3px;
     border-top-left-radius: 3px;
     /*border-top-left-radius: 10px;
@@ -8,13 +8,13 @@
     border-bottom: 1px solid #987244;*/
     .folder-button{
       &:hover{
-        background: #283593;
       }
     }
     .new-folder-button{
       background: #4CAF50;
       &:hover{
         background: #388E3C;
+        border-top-right-radius: 3px;
       }
     }
     li{
@@ -26,9 +26,12 @@
         border: 0;
       }
       &:active{
-        background: #283593;
+      /*  background: #283593;*/
       }
     }
+  }
+  .folder-title{
+    margin-top: 0px;
   }
   .folder-options-button{
     float: right;

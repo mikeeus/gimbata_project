@@ -5,42 +5,27 @@
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
     
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to dashboard_path, remote: true do %>
-          <i class="material-icons">home</i> Dashboard
-        <% end %>
-      </li>
+      <!-- Home -->
+        <li>
+          <%= link_to root_path do %>
+            <i class="material-icons">home</i> Home
+          <% end %>
+        </li>
 
-      <li  data-toggle="collapse" data-target="#company-nav" class="menu-link collapsed">
-        <%= link_to '#' do %>
-          <i class="material-icons">location_city</i> <%= current_company.name %>
-          <i class="material-icons expand-more">expand_more</i>
-        <% end %>
-      </li>
-      <ul class="sub-menu collapse" id="company-nav">
-        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Show Page", company_path(current_company), remote: true %></li>
-        <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Folders", folders_path(current_company) %></li>
-      </ul>
-
-      <% if false %>
-        <li data-toggle="collapse" data-target="#projects-nav" class="menu-link collapsed">
+      <!-- COMPANY -->
+      <% if user_signed_in? %>
+        <li  data-toggle="collapse" data-target="#company-nav" class="menu-link collapsed">
           <%= link_to '#' do %>
-            <i class="material-icons">business_center</i> Projects
+            <i class="material-icons">location_city</i> <%= current_company.name %>
             <i class="material-icons expand-more">expand_more</i>
           <% end %>
-        </li>  
-        <ul class="sub-menu collapse" id="projects-nav">
-          <% current_company.projects.each do |project| %>
-            <li><i class="material-icons chevron-right">chevron_right</i><%= project.name %></li>
-          <% end %>
+        </li>
+        <ul class="sub-menu collapse" id="company-nav">
+          <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Show Page", company_path(current_company), remote: true %></li>
+          <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Folders", folders_path(current_company) %></li>
         </ul>
+
       <% end %>
-
-    <% else %>
-
-    <% end %>
-
     </ul>
   </div>
 </div>

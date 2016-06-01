@@ -102,7 +102,7 @@ font-color: rgba(255,255,255,0.84);
     overflow-y: hidden;
     font-size: 13px;
     font-weight: 200;
-    background-color: #00796B;
+    background-color: #37BC9B;
     top: 0px;
     width: 300px;
     height: 100%;
@@ -129,13 +129,13 @@ font-color: rgba(255,255,255,0.84);
 
   .nav-side-menu li:hover {
     border-left: 3px solid #FFEB3B;
-    border-bottom: 1px solid #00695C;
-    background-color: #004D40;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
+    /*border-bottom: 1px solid #2B9A7F;*/
+    background-color: #247964;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
 
   .nav-side-menu ul .active,
@@ -146,7 +146,7 @@ font-color: rgba(255,255,255,0.84);
   .nav-side-menu li {
     padding-left: 0px;
     border-left: 3px solid #004D40;
-    border-bottom: 1px solid #00695C;
+    /*border-bottom: 1px solid #00695C;*/
     color: #fff;
   }
   .nav-side-menu li a {
@@ -175,9 +175,10 @@ font-color: rgba(255,255,255,0.84);
   .nav-side-menu ul .sub-menu li,
   .nav-side-menu li .sub-menu li {
     background-color: #009688;
+    border-left: 3px solid #006D5B;
     border: none;
     line-height: 40px;
-    border-bottom: 1px solid #01776C;
+    /*border-bottom: 1px solid #01776C;*/
     margin-left: 0px;
     max-height: 40px;
     padding-right: 10px;

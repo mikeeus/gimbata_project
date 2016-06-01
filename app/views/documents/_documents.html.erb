@@ -17,9 +17,9 @@
     </div>
     
   <% end %>
-    <button type="button" class="btn btn-lg btn-raised btn-primary" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
+    <button type="button" class="btn btn-raised btn-primary" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
       <%= render 'documents/document_upload_modal' %>
-    <h2><%= @folder.name %></h2>
+    <h3 class="folder-title"><%= @folder.name %></h3>
   </div>  
 </div>
 
