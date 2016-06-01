@@ -6,26 +6,42 @@
     /*border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom: 1px solid #987244;*/
+    .folder-button{
+      &:hover{
+        background: #283593;
+      }
+    }
+    .new-folder-button{
+      background: #4CAF50;
+      &:hover{
+        background: #388E3C;
+      }
+    }
     li{
       vertical-align: middle;
       &:hover{
-        background: #283593;
+        -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 3px;
+        border: 0;
       }
       &:active{
         background: #283593;
       }
-      /*border-right: 1px solid #987244;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      background: rgb(248, 210, 146);*/
     }
   }
   .folder-options-button{
     float: right;
   }
   .new-folder-button{
-    background: #4CAF50;
     border-top-right-radius: 3px;
+    /*&:hover{
+      background: #4CAF50;
+      -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 3px;
+      border: 0;
+    }*/
   }
   .documents-folder{
     width: 100%;
@@ -35,6 +51,9 @@
       h4{
         margin: 0;
       }
+    }
+    .document-created-at{
+      float: right;
     }
     .document-file-size, .document-file-update-at{
       color: #616161;

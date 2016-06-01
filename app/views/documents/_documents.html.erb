@@ -43,7 +43,7 @@
               <% end %>
 
               <div class="document-file-type">
-                <%= document.file_content_type %>
+                <% document.file_content_type %>
               </div>
               <!-- Edit in browser -->
               <!-- Download -->
@@ -54,7 +54,8 @@
                 <%= number_to_human_size(document.file_file_size) %>
               </div>
               <div class="document-file-update-at">
-                <%= document.file_updated_at %>
+                <span class="document-created-at">Created at: <%= document.created_at.strftime("%B %e, %Y") %></span>
+                Last edited: <%= document.file_updated_at.strftime("%B %e, %Y") %>
               </div>
             </div>
           </div>
