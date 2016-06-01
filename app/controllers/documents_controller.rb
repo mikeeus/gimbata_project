@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :correct_folder_and_documents, only: [:index, :create, :destroy]
+  before_action :correct_folder_and_documents, only: [:index, :create, :destroy, :edit]
+  before_action :apikey
   respond_to :html, :js
 
   def index
@@ -21,6 +22,26 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def edit
+    @document = @folder.documents.find_by(id: params[:id])
+    url = "https://sheet.zoho.com/sheet/remotedoc.im"
+    uri = URI.parse(url)
+    params = { apikey: @apikey, 
+               output: "url", 
+               mode: "normaledit",
+               filename: @document.file_file_name,
+               lang: "en",
+               id: "#{current_user.id}/#{@document.id}",
+               format: "xls",
+               saveurl: folder_document_path(@folder, @document)
+              }
+    Net::HTTP.post_form(uri, params)
+  end
+
+  def update
+    
+  end
+
   def destroy
     @document = @folder.documents.find_by(id: params[:id])
     @document.destroy
@@ -39,5 +60,9 @@ class DocumentsController < ApplicationController
 
     def document_params
       params.require(:document).permit(:file, :name)
+    end
+
+    def apikey
+      @apikey = "14429e369be91199e238ed416a579a84"
     end
 end

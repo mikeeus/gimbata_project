@@ -8,7 +8,7 @@ class Document < ActiveRecord::Base
         "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
         "application/msword", "application/doc",  
         "text/plain","file/text", "image/jpg", "image/jpeg", 
-        "image/png", "image/gif", "text/csv"]},
+        "image/png", "image/gif", "text/csv", "text/comma-separated-values"]},
       message: "Sorry, only Images (png, gif, jpeg or png), PDF, Excel, MSWord or plain text files are allowed."
 
 

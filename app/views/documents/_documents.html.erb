@@ -45,11 +45,15 @@
               <div class="document-file-type">
                 <% document.file_content_type %>
                 <%= link_to "Download", document.file.url(:original, false) %>
+                <%= link_to "Edit", edit_folder_document_path(@folder, document) %>
               </div>
-              <div class="document-edit">Edit in browser</div>
-              <!-- MSWord https://writer.zoho.com/writer/remotedoc.im -->
-              <!-- Excel  https://sheet.zoho.com/sheet/remotedoc.im -->
-              <!-- Download -->
+              <!-- <div class="document-edit">Edit in browser</div> -->
+              <!-- Writer: https://writer.zoho.com/writer/remotedoc.im 
+                    doc, docx, html, pdf, htm, odt, rtf, txt-->
+              <!-- Sheets: https://sheet.zoho.com/sheet/remotedoc.im
+                    xls, xlsx, ods, sxc, csv, tsv, pdf -->
+              <!-- Show:   https://show.zoho.com/show/remotedoc.im 
+                    ppt, pptx, pps, ppsx, odp, sxi -->
               <div class="document-name">
                 <h4><%= document.name %></h4>
               </div>
