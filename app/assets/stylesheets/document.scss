@@ -1,3 +1,9 @@
+@mixin box-shadow($a, $b){
+  -webkit-box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
+  border-radius: 3px;
+}
+
 /* FOLDER */
   #folder-tabs{
     /*background: #3F51B5;*/
@@ -20,15 +26,17 @@
     li{
       vertical-align: middle;
       &:hover{
-        -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 3px;
-        border: 0;
+        @include box-shadow(4px,10px);
       }
       &:active{
       /*  background: #283593;*/
       }
     }
+  }
+  #folder-window{
+    /*background: #292929;*/
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
   }
   .folder-title{
     margin-top: 0px;
@@ -46,6 +54,11 @@
       border: 0;
     }*/
   }
+  .new_folder{
+    label{
+      /*color: white;*/
+    }
+  }
   .documents-folder{
     width: 100%;
   }
@@ -54,8 +67,10 @@
     float: right;
   }
   .document-panel{
-    background: #CFD8DC;
+    background: #FAFAFA;
     margin-bottom: 10px;
+    @include box-shadow(2px,4px);
+    border: 0;
     .document-panel-body{
       padding: 5px;
       .document-name{
@@ -81,7 +96,7 @@
         }
       }
       a{
-        
+
       }
     }
     .document-delete{
@@ -97,6 +112,7 @@
   }
   #document-upload-button{
     float: right;
+    margin-right: 10px;
   }
 
 
