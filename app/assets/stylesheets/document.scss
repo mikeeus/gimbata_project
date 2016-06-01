@@ -49,39 +49,44 @@
   .documents-folder{
     width: 100%;
   }
-  .document-panel-body{
-    .document-name{
-      h4{
-        margin: 0;
-      }
-    }
-    .document-created-at{
-      float: right;
-    }
-    .document-file-size, .document-file-update-at{
-      color: #616161;
-    }
-    .document-icon{
-      float: left;
-      height: 58px;
-      width: 58px;
-      margin-right: 10px;
-      img{
-        height: 58px;
-        width: 58px;
-      }
-    }
-  }
+  
   .document-file-type{
     float: right;
   }
   .document-panel{
+    background: #CFD8DC;
     margin-bottom: 10px;
     .document-panel-body{
       padding: 5px;
+      .document-name{
+        h5{
+          margin: 0;
+        }
+      }
+      .document-created-at{
+        float: right;
+      }
+      .document-file-size, .document-file-update-at{
+        color: #616161;
+      }
+      .document-icon{
+        float: left;
+        height: 58px;
+        width: 58px;
+        margin-right: 10px;
+        img{
+          height: 58px;
+          width: 58px;
+          border-radius: 5px;
+        }
+      }
+      a{
+        
+      }
     }
     .document-delete{
       float: right;
+      height: 24px;
       margin-top: -2px;
       margin-bottom: 2px;
       margin-left: 10px;
@@ -113,6 +118,7 @@
   .btn-file {
     background-color: #B2EBF2;
     padding: 8px 15px;
+    margin-bottom: 10px;
     input{
       display: none;
     }
@@ -122,6 +128,6 @@
     }
   }
   #upload-file-info{
-    font-size: 15px;
+    /*font-size: 12px;*/
     /*background: #FF5722;*/
   }
