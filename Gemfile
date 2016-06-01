@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # Use to import google's material icons
 gem 'material_icons'
+# Use bootflat for flat design
+gem 'bootflat-rails'
 # Use paperclip for file storage
 gem 'paperclip', "~> 5.0.0.beta1"
 # Use aws-sdk gem to allow hosting on amazon s3 servers
