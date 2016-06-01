@@ -43,6 +43,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Use figaro to handle environment variables
+gem 'figaro'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
