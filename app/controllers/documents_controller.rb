@@ -35,7 +35,11 @@ class DocumentsController < ApplicationController
                format: "xls",
                saveurl: folder_document_path(@folder, @document)
               }
-    Net::HTTP.post_form(uri, params)
+    return Net::HTTP.post_form(uri, params)
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   def update
