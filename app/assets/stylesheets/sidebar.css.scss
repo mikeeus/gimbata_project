@@ -23,7 +23,6 @@ font-color: rgba(255,255,255,0.84);
   }
   @media(min-width: 1200px){
     #sidebar{
-      margin-top: 5px;
     }
   }
   @media (min-width: 768px){
@@ -54,6 +53,7 @@ font-color: rgba(255,255,255,0.84);
   }
 
   #sidebar-toggle{
+    height: 36px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
