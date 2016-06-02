@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_action :current_company
   before_action :correct_folder_and_documents, only: [:index, :create, :destroy, :edit]
   before_action :apikey
   respond_to :html, :js
@@ -58,7 +59,7 @@ class DocumentsController < ApplicationController
   private
 
     def correct_folder_and_documents
-      @folder = company_folders.find(params[:folder_id])
+      @folder = @company.folders.find(params[:folder_id])
       @documents = @folder.documents
     end
 

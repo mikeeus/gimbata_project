@@ -1,13 +1,13 @@
 class FoldersController < ApplicationController
-  before_action :company_folders, only: [:index, :new, :create, :show, :destroy]
+  before_action :current_company
   respond_to :html, :js
 
   def new
-    @folder = current_company.folders.build
+    @folder = @folders.build
   end
 
   def create
-    @folder = current_company.folders.build(folder_params)
+    @folder = @folders.build(folder_params)
     respond_to do |format|
       if @folder.save
         flash[:success] = "Folder successfuly created"
@@ -20,12 +20,12 @@ class FoldersController < ApplicationController
   end
 
   def show
-    @folder = company_folders.find(params[:id])
+    @folder = @folders.find(params[:id])
   end
 
   def index
     if params[:folder]
-      @folder = company_folders.find(params[:folder])
+      @folder = @folders.find(params[:folder])
       @document = @folder.documents.build
       @documents = @folder.documents
     end
@@ -39,7 +39,7 @@ class FoldersController < ApplicationController
   private
 
     def company_folders
-      @folders = current_company.folders
+      @folders = @company.folders
     end
     def folder_params
       params.require(:folder).permit(:name)

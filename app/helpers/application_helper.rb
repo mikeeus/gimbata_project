@@ -3,11 +3,9 @@ module ApplicationHelper
   def current_company
     if user_signed_in?
       @company = current_user.company
+      @folders = @company.folders
+      @users = @company.users
     end
-  end
-
-  def company_folders
-    @folders = current_company.folders
   end
 
   # VIEWS  
