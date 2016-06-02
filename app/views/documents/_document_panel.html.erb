@@ -23,8 +23,14 @@
       <%= number_to_human_size(document.file_file_size) %>
     </div>
     <div class="document-file-update-at">
-      <span class="document-created-at">Created at: <%= document.created_at.strftime("%B %e, %Y") %></span>
-      Last edited: <%= document.file_updated_at.strftime("%B %e, %Y") %>
+      <% unless document.created_at.nil? || document.file_updated_at.nil? %>
+        <span class="document-created-at">
+        Created at: <%= document.created_at.strftime("%B %e, %Y") %></span>
+        Last edited: <%= document.file_updated_at.strftime("%B %e, %Y") %>
+      <% else %>
+        <!-- This is to avoid partial from breaking when document upload is broken and values are nil -->
+        There must have been an error with file upload.
+      <% end %>
     </div>
   </div>
 </div>

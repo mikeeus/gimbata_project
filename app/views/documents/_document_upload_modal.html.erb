@@ -2,7 +2,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4>Select file to upload</h4>
+        <h4>Upload a document</h4>
+        <div id="dropzone" class="fade">Drop files here</div>
+        <span class="label label-default" id="document-file-name"></span>
       </div>
       <%= form_for(@document, url: folder_documents_path(@folder), remote: true ) do |f|  %>
         <div class="modal-body">
@@ -50,18 +52,21 @@
 
     documentUploadForm.fileupload({
       dataType: 'script',
+      dropZone: $('#dropzone'),
       add: function (e, data) {
         types = /(\.|\/)(pdf|xls|xlsx|doc|docx|txt|gif|jpe?g|png|bmp)$/i;
         file = data.files[0]
         if (types.test(file.type) || types.test(file.name)) {
           data.submit();
+          var name = file.name;
+          $('#document-file-name').append("<p id='appended-name'>"+name+"<p>");
         }
         else { alert(file.name + " must be XLS, XLSX, DOC, DOCX, TXT, GIF, JPEG, BMP or PNG file"); }
       }
     });
 
     documentUploadForm.on('fileuploadsubmit', function(e, data){
-      data.formData = {'document[name]': $('#document_name ').val()};
+      data.formData = {'document[name]': data.files[0].name};
     });
 
     // Progress bar configuration
@@ -88,5 +93,34 @@
       progress_bar.css('width', progress + '%').text(progress + '%');
     });
 
+  });
+
+  // Dropzone
+  $(document).bind('dragover', function (e, data) {
+    var dropZone = $('#dropzone'),
+            timeout = window.dropZoneTimeout;
+    if (!timeout) {
+      dropZone.addClass('in');
+    } else {
+      clearTimeout(timeout);
+    }
+    var found = false,
+            node = e.target;
+    do {
+      if (node === dropZone[0]) {
+        found = true;
+        break;
+      }
+      node = node.parentNode;
+    } while (node != null);
+    if (found) {
+      dropZone.addClass('hover');
+    } else {
+      dropZone.removeClass('hover');
+    }
+    window.dropZoneTimeout = setTimeout(function () {
+      window.dropZoneTimeout = null;
+      dropZone.removeClass('in hover');
+    }, 100);
   });
 </script>
