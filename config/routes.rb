@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#homepage'
 
   resources :company, only: [:show]
+  resources :users, only: [:show, :index, :edit, :update]
   resources :folders do
     resources :documents
   end

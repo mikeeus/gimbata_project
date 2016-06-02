@@ -26,6 +26,28 @@ User.create!(
   password_confirmation: "password"
 )
 
+User.create!(
+  company_id: 1,
+  first_name: "Samius",
+  last_name: "Abera",
+  position: "Office Manager",
+  role: 1,
+  email: "samius@gimbata.com",
+  password: "password",
+  password_confirmation: "password"
+)
+
+User.create!(
+  company_id: 1,
+  first_name: "Spiers",
+  last_name: "Damazing",
+  position: "Office Manager",
+  role: 0,
+  email: "spiers@gimbata.com",
+  password: "password",
+  password_confirmation: "password"
+)
+
 Folder.create!(
   company_id: 1,
   name: "40/60 Condominiums"
