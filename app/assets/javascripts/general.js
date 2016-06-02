@@ -18,6 +18,12 @@ $(document).ready(function(){
     $(this).closest(".dropdown-menu").prev().dropdown("toggle");
   });
 
+  // Close modal after form submit
+  // $('#documentUploadForm').on('submit', function(){
+  //   $('#documentUploadModal').modal('toggle');
+    // $('body').removeClass('modal-open');
+    // $('.modal-backdrop').remove();
+  // });
 
 });
 

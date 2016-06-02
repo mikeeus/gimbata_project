@@ -1,1 +1,5 @@
-$('#folder-window').html("<%= j (render 'documents') %>");
+<% if @document.new_record? %>
+  alert('The file could not be uploaded: <%= j @document.errors.full_messages.join(', ').html_safe %>');
+<% else %>
+  $('#documentList').append("<%= j (render 'document_panel', document: @document) %>");
+<% end %>

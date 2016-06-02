@@ -1,5 +1,13 @@
 module ApplicationHelper
   
+  def admin_user?
+    current_user.role == "admin" ? true : false
+  end
+
+  def redirect_unless_admin_user
+    redirect_to(root_url) unless current_user.role == "admin"
+  end
+    
   def current_company
     if user_signed_in?
       @company = current_user.company

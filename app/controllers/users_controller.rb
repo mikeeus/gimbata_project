@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    
   end
 
   def index
-    
   end
 
   def edit
@@ -15,4 +13,7 @@ class UsersController < ApplicationController
   def update
     
   end
+
+  private
+    
 end

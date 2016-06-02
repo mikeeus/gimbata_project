@@ -9,16 +9,11 @@ class DocumentsController < ApplicationController
 
   def create
     @document = @folder.documents.build(document_params)
+    @document.save
     respond_to do |format|
-      if @document.save
-        flash[:success] = "File successfuly uploaded!"
-        format.html { redirect_to controller: 'folders', action: 'index', remote: true, folder: @folder }
-        format.js {}
-      else
-        flash[:danger] = "File not uploaded."
-        format.html { redirect_to controller: 'folders', action: 'index', remote: true, folder: @folder }
-        format.js {}
-      end
+      # flash.now[:success] = "File successfuly uploaded!"
+      format.html { redirect_to controller: 'folders', action: 'index', remote: true, folder: @folder }
+      format.js {}
     end
   end
 

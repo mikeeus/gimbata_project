@@ -4,7 +4,7 @@
       <div class="modal-header">
         <h4>Select file to upload</h4>
       </div>
-      <%= form_for(@document, url: folder_documents_path(@folder), remote: true, format: :js) do |f|  %>
+      <%= form_for(@document, url: folder_documents_path(@folder), remote: true ) do |f|  %>
         <div class="modal-body">
           <div class="form-group">
             <%= f.label :name %>
@@ -13,7 +13,7 @@
           <div>
             <label class="btn btn-default btn-raised btn-file">
               <%= f.label :file, 'Click here to choose file' %>
-              <%= f.file_field :file, onchange:"$('#upload-file-info').html($(this).val());" %><br>
+              <%= f.file_field :file, name: "document[file]", onchange:"$('#upload-file-info').html($(this).val());" %><br>
             </label>
             <span class='label label-default' id="upload-file-info"></span>
           </div>
@@ -27,7 +27,7 @@
           <button type="button" class="btn btn-default btn-raised cancel-button" data-dismiss="modal">
             Cancel
           </button>
-          <%= f.submit "Upload file", class: "btn btn-primary btn-raised submit-button" %>
+          <%= f.submit "Upload", id: "documentUpload", class: "btn btn-primary btn-raised submit-button", data: { disable_with: 'Uploading' }, onclick: "$('#documentUploadModal').modal('hide');" %>
         </div>
       <% end %>
     </div>

@@ -19,6 +19,10 @@ gem 'bootflat-rails'
 gem 'paperclip', "~> 5.0.0.beta1"
 # Use aws-sdk gem to allow hosting on amazon s3 servers
 gem 'aws-sdk'
+# Use for file upload
+gem 'jquery-fileupload-rails'
+# Use to enable ajax file uploads in rails 3 and 4
+gem 'remotipart'
 # Use turbolinks for faster page loading
 # gem 'turbolinks', '~> 5.0.0.beta'
 
