@@ -1,7 +1,10 @@
 <% unless user_signed_in? %>
   <div class="jumbotron text-center">
-    <h1>Gimbata</h1>
+    <h1>file | FOLDER</h1>
     <p>Reporting and file storage solution for Ethiopia's forward thinking contractors!</p>
+  </div>
+  <div class="text-center">
+    <%= render 'static_pages/plans' %>
   </div>
 <% else %>
   <div class="panel panel-default text-center">

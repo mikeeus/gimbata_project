@@ -1,7 +1,6 @@
 @mixin box-shadow($a, $b){
   -webkit-box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
-  border-radius: 3px;
 }
 
 /* FOLDER */
