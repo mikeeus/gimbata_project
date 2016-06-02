@@ -1,5 +1,4 @@
 class DocumentsController < ApplicationController
-  before_action :current_company
   before_action :correct_folder_and_documents, only: [:index, :create, :destroy, :edit]
   before_action :apikey
   respond_to :html, :js

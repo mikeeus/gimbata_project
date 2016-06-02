@@ -1,5 +1,4 @@
 class FoldersController < ApplicationController
-  before_action :current_company
   respond_to :html, :js
 
   def new

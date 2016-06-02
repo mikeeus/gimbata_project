@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :disable_sidebar, if: :devise_controller?
   before_action :authenticate_user! # disable on homepage
+  before_action :current_company
 
   include ApplicationHelper
 

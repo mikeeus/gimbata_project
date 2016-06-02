@@ -8,7 +8,7 @@
       <!-- Home -->
         <li>
           <%= link_to root_path do %>
-            <i class="material-icons">home</i> Home
+            <i class="material-icons sidebar-icon">home</i> <span class="sidebar-label">Home</span>
           <% end %>
         </li>
 
@@ -16,15 +16,44 @@
       <% if user_signed_in? %>
         <li  data-toggle="collapse" data-target="#company-nav" class="menu-link collapsed">
           <%= link_to '#' do %>
-            <i class="material-icons">location_city</i> <%= current_company.name %>
+            <i class="material-icons sidebar-icon">location_city</i>
+            <span class="sidebar-label"> <%= @company.name %></span>
             <i class="material-icons expand-more">expand_more</i>
           <% end %>
         </li>
         <ul class="sub-menu collapse" id="company-nav">
-          <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Show Page", company_path(current_company), remote: true %></li>
-          <li><i class="material-icons chevron-right">chevron_right</i><%= link_to "Folders", folders_path(current_company) %></li>
+          <li><i class="material-icons chevron-right">chevron_right</i>
+          <span class="sidebar-sub-label">
+            <%= link_to "Show Page", company_path(current_company), remote: true %>
+          </span></li>
+          <li><i class="material-icons chevron-right">chevron_right</i>
+          <span class="sidebar-sub-label">
+            <%= link_to "Folders", folders_path(current_company) %>
+          </span></li>
         </ul>
 
+        <!-- If user admin? -->
+          <!-- Admin dashboard -->
+          <li  data-toggle="collapse" data-target="#user-nav" class="menu-link collapsed">
+            <%= link_to '#' do %>
+              <i class="material-icons sidebar-icon">face</i>
+              <span class="sidebar-label"> <%= current_user.first_name %></span>
+              <i class="material-icons expand-more">expand_more</i>
+            <% end %>
+          </li>
+          <ul class="sub-menu collapse" id="user-nav">
+            <li><i class="material-icons chevron-right">chevron_right</i>
+            <span class="sidebar-sub-label"> 
+              <%= link_to "Show Page", current_user, remote: true %>
+            </span></li>
+            <li><i class="material-icons chevron-right">chevron_right</i> 
+            <span class="sidebar-sub-label">
+              <%= link_to "Folders", user_path(current_user) %>
+            </span></li>
+          </ul>
+
+        <!-- If user !admin -->
+          <!-- User profile -->
       <% end %>
     </ul>
   </div>
