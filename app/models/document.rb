@@ -9,7 +9,7 @@ class Document < ActiveRecord::Base
         "application/msword", "application/doc",  
         "text/plain","file/text", "image/jpg", "image/jpeg", 
         "image/png", "image/gif", "text/csv", "text/comma-separated-values"]},
-      message: "Sorry, only Images (png, gif, jpeg or png), PDF, Excel, MSWord or plain text files are allowed."
+      message: "Sorry, only Images (png, gif, jpeg or jpg), PDF, Excel, MSWord or plain text files are allowed."
 
 
   def icon_url

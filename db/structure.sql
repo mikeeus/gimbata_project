@@ -168,7 +168,11 @@ CREATE TABLE users (
     current_sign_in_ip inet,
     last_sign_in_ip inet,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    avatar_file_name character varying,
+    avatar_content_type character varying,
+    avatar_file_size integer,
+    avatar_updated_at timestamp without time zone
 );
 
 
@@ -332,4 +336,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160528091253');
 INSERT INTO schema_migrations (version) VALUES ('20160528110658');
 
 INSERT INTO schema_migrations (version) VALUES ('20160528110814');
+
+INSERT INTO schema_migrations (version) VALUES ('20160602162510');
 

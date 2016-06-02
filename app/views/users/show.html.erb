@@ -1,0 +1,16 @@
+<!-- If current_user.admin? -->
+<div class="col-md-3">
+  <div class="well text-center">
+    <h3><%= "#{current_user.first_name} #{current_user.last_name}" %></h3>
+    <%= image_tag current_user.avatar.url(:thumb) %>
+
+  </div>
+</div>
+<div class="col-md-9">
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= "#{user.first_name} #{user.last_name}" %></li>
+    <% end %>
+  </ul>
+</div>
+<!-- else -->
