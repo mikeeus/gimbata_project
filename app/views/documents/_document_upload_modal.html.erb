@@ -6,30 +6,87 @@
       </div>
       <%= form_for(@document, url: folder_documents_path(@folder), remote: true ) do |f|  %>
         <div class="modal-body">
+
+          <!-- Fields -->
           <div class="form-group">
             <%= f.label :name %>
             <%= f.text_field :name, class: "form-control" %>
           </div>
           <div>
             <label class="btn btn-default btn-raised btn-file">
-              <%= f.label :file, 'Click here to choose file' %>
+              <%= f.label :file, 'Select a file to upload automatically' %>
               <%= f.file_field :file, name: "document[file]", onchange:"$('#upload-file-info').html($(this).val());" %><br>
+              <!-- $('#documentUploadModal').modal('hide'); -->
             </label>
             <span class='label label-default' id="upload-file-info"></span>
           </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-              <span class="sr-only">40% Complete (success)</span>
+
+          <!-- Progress Bar -->
+          <div class="progress-wrapper">
+            <p>Bitrate: <span class="bitrate"></span></p>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                <span class="sr-only"></span>
+              </div>
             </div>
           </div>
-        </div>      
+        </div>  
+
+        <!-- Buttons -->
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-raised cancel-button" data-dismiss="modal">
             Cancel
           </button>
-          <%= f.submit "Upload", id: "documentUpload", class: "btn btn-primary btn-raised submit-button", data: { disable_with: 'Uploading' }, onclick: "$('#documentUploadModal').modal('hide');" %>
+
         </div>
       <% end %>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    var documentUploadForm = $('#new_document');
+
+    documentUploadForm.fileupload({
+      dataType: 'script',
+      add: function (e, data) {
+        types = /(\.|\/)(pdf|xls|xlsx|doc|docx|txt|gif|jpe?g|png|bmp)$/i;
+        file = data.files[0]
+        if (types.test(file.type) || types.test(file.name)) {
+          data.submit();
+        }
+        else { alert(file.name + " must be XLS, XLSX, DOC, DOCX, TXT, GIF, JPEG, BMP or PNG file"); }
+      }
+    });
+
+    documentUploadForm.on('fileuploadsubmit', function(e, data){
+      data.formData = {'document[name]': $('#document_name ').val()};
+    });
+
+    // Progress bar configuration
+    var wrapper = documentUploadForm.find('.progress-wrapper');
+    var progress_bar = wrapper.find('.progress-bar');
+
+    documentUploadForm.on('fileuploadstart',function(){
+      wrapper.show();
+    });
+
+    documentUploadForm.on('fileuploadaddone', function(){
+      wrapper.hide();
+      progress_bar.width(0); // Revert progress bar's width back to 0 for future upload
+    });
+
+    // Bit rate
+    var bitrate = wrapper.find('.bitrate');
+
+    // Complete progress bar with bitrate
+    documentUploadForm.on('fileuploadprogressall', function (e, data) {
+      bitrate.text((data.bitrate / 1024).toFixed(0) + 'Kb/s');
+
+      var progress = parseInt(data.loaded / data.total * 100, 10);
+      progress_bar.css('width', progress + '%').text(progress + '%');
+    });
+
+  });
+</script>
