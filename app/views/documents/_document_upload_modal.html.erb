@@ -4,23 +4,23 @@
       <div class="modal-header">
         <h4>Upload a document</h4>
         <div id="dropzone" class="fade">Drop files here</div>
-        <span class="label label-default" id="document-file-name"></span>
+        <span id="document-file-name"></span>
       </div>
       <%= form_for(@document, url: folder_documents_path(@folder), remote: true ) do |f|  %>
         <div class="modal-body">
 
           <!-- Fields -->
           <div class="form-group">
-            <%= f.label :name %>
-            <%= f.text_field :name, class: "form-control" %>
+            <% f.label :name %>
+            <% f.text_field :name, class: "form-control" %>
           </div>
           <div>
             <label class="btn btn-default btn-raised btn-file">
-              <%= f.label :file, 'Select a file to upload automatically' %>
+              <%= f.label :file, 'Browse' %>
               <%= f.file_field :file, name: "document[file]", onchange:"$('#upload-file-info').html($(this).val());" %><br>
               <!-- $('#documentUploadModal').modal('hide'); -->
             </label>
-            <span class='label label-default' id="upload-file-info"></span>
+            <span class="label label-default" id="upload-file-info"></span>
           </div>
 
           <!-- Progress Bar -->
@@ -37,7 +37,7 @@
         <!-- Buttons -->
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-raised cancel-button" data-dismiss="modal">
-            Cancel
+            Close
           </button>
 
         </div>
@@ -59,7 +59,7 @@
         if (types.test(file.type) || types.test(file.name)) {
           data.submit();
           var name = file.name;
-          $('#document-file-name').append("<p id='appended-name'>"+name+"<p>");
+          $('#document-file-name').html(name);
         }
         else { alert(file.name + " must be XLS, XLSX, DOC, DOCX, TXT, GIF, JPEG, BMP or PNG file"); }
       }
