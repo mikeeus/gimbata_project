@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Company.create!(
-  name: "Trust Construction PLC",
+  name: "Trust Construction",
   phone_number: "123-456-7890",
   address: "123 Fake Street",
   city: "Addis Ababa",

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard' => 'dashboard#index', as: :dashboard
+  get 'settings'  => 'static_pages#settings', as: :settings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
