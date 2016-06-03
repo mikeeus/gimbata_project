@@ -28,4 +28,12 @@ module ApplicationHelper
     number_to_currency(amount, unit: "", separator: ".", delimiter: ",", significant: false)
   end
   
+  def full_title(page_title = '')
+    base_title = "mesabya"
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
 end

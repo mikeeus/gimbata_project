@@ -13,8 +13,13 @@
 /* NAVIGATION*/
 
   /* Fix navbar-right padding */
-  .brand{
+  .brand-header{
     color: white;
+  }
+  .brand-icon-white{
+    /*border-right: 2px solid white;*/
+    margin-right: 5px;
+    padding-right: 10px;
   }
   #main-navbar{
     background-color: #673AB7;
