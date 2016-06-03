@@ -1,10 +1,55 @@
-<div class="jumbotron text-center">
-  <h1><span class="brand-amharic">መሳብያ</span> | <span class="brand">mesabya</span></h1>
-  <p>Reporting and file storage solution for Ethiopia's forward thinking contractors!</p>
+<div class="container-fluid">
+  <div class="first-panel text-center">
+    <h1>This panel should be a call to action</h1>
+    
+  </div>
+
+  <!-- PANEL 1 - short description. three feature panels -->
+  <div class="homepage-panel-1 text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="brand-logo-large">
+          <%= image_tag 'mesabya/mesabya-logo-white-on-purple.jpg' %>
+        </div>
+        <div class="brand-logo-text">
+          <span class="brand-amharic">መሳብያ</span> | <span class="brand">mesabya</span>
+        </div>
+        <div class="description">
+          <p>Reporting and file storage solution for Ethiopia's forward thinking contractors!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container-fluid">
+          <!-- Three descriptive boxes -->
+          <div class="col-md-4 col-sm-4 feature-box">
+            <h3>Feature</h3>
+            <p>Description</p>
+            <i class="material-icons md-48">face</i>
+          </div>
+          <div class="col-md-4 col-sm-4 feature-box">
+            <h3>Feature</h3>
+            <p>Description</p>
+            <i class="material-icons md-48">face</i>
+          </div>
+          <div class="col-md-4 col-sm-4 feature-box">
+            <h3>Feature</h3>
+            <p>Description</p>
+            <i class="material-icons md-48">face</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel -->
+  <div class="row">
+    <% render 'static_pages/carousel' %>
+  </div>
+
+  <!-- Plans -->
+  <div class="text-center">
+      <%= render 'static_pages/plans' %>
+  </div>
 </div>
-<div class="homepage-panel-1 text-center">
-  <%= image_tag 'mesabya/mesabya-white-on-purple.png' %>
-</div>
-<div class="text-center">
-  <%= render 'static_pages/plans' %>
-</div>
+
+<%= render 'static_pages/footer' %>
