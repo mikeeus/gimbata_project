@@ -11,6 +11,11 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index', as: :dashboard
   get 'settings'  => 'static_pages#settings', as: :settings
 
+
+
+  # PDFjsviewer Not necessary
+  # mount PdfjsViewer::Rails::Engine => "/pdfjs", as: 'pdfjs'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

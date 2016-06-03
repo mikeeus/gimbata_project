@@ -23,9 +23,13 @@ gem 'aws-sdk'
 gem 'jquery-fileupload-rails'
 # Use to enable ajax file uploads in rails 3 and 4
 gem 'remotipart'
-Use compass to manage css3 vendor prefixes
+# Use compass to manage css3 vendor prefixes
 gem 'compass-rails'
 gem 'compass'
+# # Use pdfjsviewer to view pdfs in the browser
+# gem 'pdfjs_viewer-rails'
+# # Use roo to work with spreadsheets
+# gem 'roo'
 # Use turbolinks for faster page loading
 # gem 'turbolinks', '~> 5.0.0.beta'
 

@@ -12,7 +12,15 @@
 
     <div class="document-file-type">
       <% document.file_content_type %>
+      <!-- PDF Viewer -->
+      <% if document.file_content_type.include?("pdf") %>
+        <%= link_to "View PDF in new tab", pdfjs.full_path(file: document.file.url ), target: "_blank" %>
+        <!-- CHANGE the URL of this link -->
+        <%= link_to "View PDF", document.file.url(:original, false), target: "_blank" %>
+      <% end %>
+      <!-- Download -->
       <%= link_to "Download", document.file.url(:original, false) %>
+      <!-- Edit -->
       <%= link_to "Edit", edit_folder_document_path(@folder, document), remote: true %>
     </div>
     <!-- <div class="document-edit">Edit in browser</div> -->
