@@ -30,7 +30,7 @@ gem 'compass'
 # gem 'pdfjs_viewer-rails'
 # # Use roo to work with spreadsheets
 # gem 'roo'
-# Use turbolinks for faster page loading
+# # Use turbolinks for faster page loading
 # gem 'turbolinks', '~> 5.0.0.beta'
 
 # # Use to fix jquery and turbolinks errors

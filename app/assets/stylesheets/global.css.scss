@@ -1,6 +1,9 @@
 html, body, #sidebar, #content, .folders-container, #folder-window, .documents-folder, #homepage-wrapper{
   height: 100%;
 }
+#content .container-fluid{
+  height: 100%;
+}
 body {
   margin: 0px;
   padding: 0px;
