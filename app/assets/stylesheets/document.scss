@@ -23,8 +23,11 @@
         color: #8BC34A;
       }
       &:hover{
-        background: #388E3C;
+        /*background: #388E3C;*/
         border-top-right-radius: 3px;
+        a{
+          color: #aed581;
+        }
       }
     }
     li{

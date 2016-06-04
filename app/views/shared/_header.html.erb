@@ -9,12 +9,23 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to root_path, class: "navbar-brand" do %>
-        <div class="brand-header"><%= image_tag 'mesabya/icon/mesabya-icon-white.jpg', class: "brand-icon-white" %>   <span class="amharic">መሳብያ</span> | mesabya</div>
+        <div class="brand-header"><%= image_tag 'mesabya/icon/mesabya-icon-white.jpg', class: "brand-icon-white", alt: "brand" %>   <span class="amharic">መሳብያ</span> | mesabya</div>
         <!-- <div class="brand">GIMBATA | <span class="amharic-brand">ግምባታ</span></div> -->
       <% end %>
     </div>
+
+    <!-- For toggling collapsible navmenu -->
     <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
       <% if user_signed_in? %>
+        <ul class="nav navbar-nav">
+          <li><%= link_to @company.name, company_path(@company) %></li>
+          <li><%= link_to "Folders", folders_path %></li>
+        </ul>
+        <!-- Company name -->
+
+        <!-- Link to folders -->
+        <
+
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "#{current_user.first_name} #{current_user.last_name}", current_user %></li>
           <li class="dropdown">
