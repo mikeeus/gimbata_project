@@ -4,8 +4,8 @@
   <% if current_user.role == "admin" %>
     <!-- Folder Options -->
     <div class="btn-group folder-options-button">
-      <button type="button" class="btn btn-default">Folder Options</button>
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-warning">Folder Options</button>
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
@@ -17,7 +17,7 @@
     </div>
     
   <% end %>
-    <button type="button" class="btn btn-raised btn-primary" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
+    <button type="button" class="btn btn-raised btn-success" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
       <%= render 'documents/document_upload_modal' %>
     <h3 class="folder-title"><%= @folder.name %></h3>
   </div>  
