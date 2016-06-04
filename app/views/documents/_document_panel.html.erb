@@ -14,7 +14,6 @@
       <% document.file_content_type %>
       <!-- PDF Viewer -->
       <% if document.file_content_type.include?("pdf") %>
-        <%= link_to "View PDF in new tab", pdfjs.full_path(file: document.file.url ), target: "_blank" %>
         <!-- CHANGE the URL of this link -->
         <%= link_to "View PDF", document.file.url(:original, false), target: "_blank" %>
       <% end %>

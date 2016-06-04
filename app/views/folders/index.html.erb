@@ -4,7 +4,7 @@
   <% end %>
     <li role="presentation" class="new-folder-button" ><%= link_to "Create new folder", new_folder_path, remote: true%></li>
 </ul>
-<div class="well" id="folder-window">
+<div class="container-fluid" id="folder-window">
   <% if @folder %>
     <%= render 'documents/documents', folder: @folder %>
   <% else %>

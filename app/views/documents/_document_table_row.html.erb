@@ -1,0 +1,28 @@
+<tbody>
+  <tr class="body-row">
+    <td><%= image_tag "#{document.file_content_type}" %></td>
+    <td><%= document.name %></td>
+    <% unless document.created_at.nil? || document.file_updated_at.nil? %>
+      <span class="document-created-at">
+      <td><%= document.created_at.strftime("%B %e, %Y") %></td>
+      <td><%= document.file_updated_at.strftime("%B %e, %Y") %></td>
+    <% else %>
+      <td></td>
+      <td></td>
+    <% end %>
+    <td><%= number_to_human_size(document.file_file_size) %></td>
+    <!-- PDF Viewing/downloading -->
+    <% if document.file_content_type.include?("pdf") %>
+      <td><%= link_to "View PDF", document.file.url(:original, false), target: "_blank" %></td>
+    <% else %>
+      <td><%= link_to "Download", document.file.url(:original, false), target: "_blank" %></td>
+    <% end %>
+    <!-- Excel and msword in browser Viewing/editing -->
+    <% if false # document.file_content_type.include?("msword") || document.file_content_type.include?("xls") %>
+      <td><%= link_to "Edit", document.file.url(:original, false), target: "_blank" %></td>
+    <% else %>
+      <td>.</td>
+    <% end %>
+  </tr>
+</tbody>
+<!-- Differentiate between admin and non-admin -->

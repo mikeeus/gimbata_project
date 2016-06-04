@@ -2,7 +2,7 @@
   <div class="container-fluid">
 
   <% if current_user.role == "admin" %>
-    <!-- Split button -->
+    <!-- Folder Options -->
     <div class="btn-group folder-options-button">
       <button type="button" class="btn btn-default">Folder Options</button>
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -23,9 +23,25 @@
   </div>  
 </div>
 
+
+<table class="table" id="documentsTable">
+  <%= render 'documents/document_table_head' %>
+  <% if @documents.count > 0 %>
+    <% @documents.each do |document| %>
+      <% unless document.id == nil %>
+        <%= render 'documents/document_table_row', document: document %>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
+
+
+
+<% if false %>
 <div class="row">
   <div class="container-fluid">
     <div id="documentList">
+   
       <% if @documents.count > 0 %>
 
         <!-- Display each document as panel -->
@@ -38,6 +54,8 @@
         <!-- Message for empty folder -->
         <p>You have no files in this folder. Use the button above to upload a file.</p>
       <% end %>
+    
     </div>
   </div>
 </div>
+<% end %>
