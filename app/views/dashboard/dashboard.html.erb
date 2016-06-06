@@ -9,7 +9,7 @@
   <!-- Show activity feed of users and documents -->
   <div class="well text-center">
   <% @documents.each do |document| %>
-    <% if ZohoService.new(document).doc_or_spreadsheet? %>
+    <% if document.doc_or_spreadsheet? %>
       <%= render 'documents/zoho_form', document: document %>
       format: <%= ZohoService.new(document).file_format %> <br />
       zoho_url: <%= ZohoService.new(document).zoho_url %> <br />

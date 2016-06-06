@@ -4,6 +4,12 @@
 }
 
 /*DOCUMENTS*/
+
+  .zoho-edit{
+    margin-top: -5px;
+    padding: 0px 10px;
+  }
+
   .document-file-type{
     float: right;
   }
@@ -98,5 +104,15 @@
     }
     .body-row{
       border-bottom: 2px solid #9575CD;
+      td {
+        vertical-align: middle;
+      }
+      .zoho-cell{
+        padding: 0px;
+        vertical-align: middle;
+      }
+    }
+    .zoho-edit{
+      background: black !important;
     }
   }

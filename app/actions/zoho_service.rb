@@ -25,14 +25,6 @@ class ZohoService
     end
   end
 
-  def doc_or_spreadsheet?
-    if @content_type.include?("xlsx") || @content_type.include?("xls") || @content_type.include?("excel") || @content_type.include?("spreadsheetml") || @content_type.include?("doc") || @content_type.include?("msword")
-      true
-    else
-      false
-    end
-  end
-
   def zoho_url
     if @content_type.include?("xlsx") || @content_type.include?("xls") || @content_type.include?("excel") || @content_type.include?("spreadsheetml")
       "https://sheet.zoho.com/sheet/remotedoc.im"

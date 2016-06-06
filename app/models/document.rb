@@ -30,4 +30,13 @@ class Document < ActiveRecord::Base
     end
   end
 
+  def doc_or_spreadsheet?
+    content_type = self.file_content_type
+    if content_type.include?("xlsx") || content_type.include?("xls") || content_type.include?("excel") || content_type.include?("spreadsheetml") || content_type.include?("doc") || content_type.include?("msword")
+      true
+    else
+      false
+    end
+  end
+
 end

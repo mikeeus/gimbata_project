@@ -18,9 +18,11 @@
       <td><%= link_to "Download", document.file.url(:original, false), target: "_blank" %></td>
     <% end %>
     <!-- Excel and msword in browser Viewing/editing -->
-    <% if false # document.file_content_type.include?("msword") || document.file_content_type.include?("xls") %>
+    <% if document.doc_or_spreadsheet? %>
       <% link_to "Edit", document.file.url(:original, false), target: "_blank" %>
-      <td><a href="https://sheet.zoho.com/sheet/view.do?url=<%= document.file.url %>&name=newName">Zoho</a></td>
+      <td class="zoho-cell">
+        <%= render 'documents/zoho_form', document: document %>
+      </td>
     <% else %>
       <td>.</td>
     <% end %>
