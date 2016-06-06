@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :documents
   end
 
-  get 'dashboard' => 'dashboard#index', as: :dashboard
+  get 'dashboard' => 'dashboard#dashboard', as: :dashboard
   get 'settings'  => 'static_pages#settings', as: :settings
 
 

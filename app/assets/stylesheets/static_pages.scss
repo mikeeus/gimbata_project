@@ -2,7 +2,6 @@
 @import "compass/css3/transition";
 @import "compass/css3/opacity";
 @import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
 
 @mixin box-shadow($a, $b){
   -webkit-box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
@@ -16,25 +15,12 @@
   }
   #homepage-wrapper{
     margin-top: -30px;
+    overflow: auto;
   }
   .first-panel{
     margin-right: -15px;
     margin-left: -15px;
-    /*background-image: url('backgrounds/drawers.jpg');*/
-    height: 400px;
-    @media(max-width: 767px){
-
-    }
-    @media(min-width: 768px) and (max-width: 991px){
-      
-    }
-    @media(min-width: 992px) and (max-width: 1199px){
-      
-    }
-    @media(min-width: 1200px){
-      
-    }
-    
+    height: 400px;    
   }
   .homepage-panel-1{
     @include transition-property(all);

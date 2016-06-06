@@ -34,28 +34,3 @@
     <% end %>
   <% end %>
 </table>
-
-
-
-<% if false %>
-<div class="row">
-  <div class="container-fluid">
-    <div id="documentList">
-   
-      <% if @documents.count > 0 %>
-
-        <!-- Display each document as panel -->
-        <% @documents.each do |document| %>
-          <% unless document.id == nil %>
-            <%= render 'documents/document_panel', document: document %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <!-- Message for empty folder -->
-        <p>You have no files in this folder. Use the button above to upload a file.</p>
-      <% end %>
-    
-    </div>
-  </div>
-</div>
-<% end %>

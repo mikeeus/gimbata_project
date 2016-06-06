@@ -1,3 +1,99 @@
-#folder-window {
-  min-height: 300px;
+@mixin box-shadow($a, $b){
+  -webkit-box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 $a $b 0 rgba(0, 0, 0, 0.2), 0 $a $b 0 rgba(0, 0, 0, 0.19);
 }
+
+
+/* FOLDER */
+  #folder-window {
+    min-height: 300px;
+  }
+  #folder-tabs{
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    /*border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #987244;*/
+    .folder-button{
+      &:hover{
+      }
+    }
+    .new-folder-button{
+      color: #4CAF50;
+      border-right: 0;
+      border-bottom: 0;
+      a{
+        color: #8BC34A;
+      }
+      &:hover{
+        /*background: #388E3C;*/
+        border-top-right-radius: 3px;
+        a{
+          color: #aed581;
+        }
+      }
+    }
+    li{
+      vertical-align: middle;      
+      &:hover{
+        @include box-shadow(4px,10px);
+      }
+      &:active{
+        background: #fff;
+      }
+      a{
+        &:hover{
+          background: #fff;
+          border-top: #9e9e9e;
+        }
+      }
+    }
+    @media(min-width: 768px){
+      li{
+        border-right: 1px solid #673ab7;
+        border-bottom: 1px solid #673ab7;
+      }
+      .new-folder-button{
+      }
+    }
+    @media(max-width: 767px){
+      li {
+        border-bottom: 1px solid #E0E0E0;
+        border-left: 0;
+      }
+      .new-folder-button{
+      }
+    }
+  }
+  #folder-window{
+    /*background: #292929;*/
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    padding-top: 10px;
+    /*border: 1px solid rgba(119, 119, 119, 0.3)*/
+  }
+  .folder-title{
+    margin-top: 0px;
+  }
+  .folder-options-button{
+    float: right;
+  }
+  .new-folder-button{
+    border-top-right-radius: 3px;
+    /*&:hover{
+      background: #4CAF50;
+      -webkit-box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 3px;
+      border: 0;
+    }*/
+  }
+  .new_folder{
+    label{
+      /*color: white;*/
+    }
+  }
+  .documents-folder{
+    width: 100%;
+  }
