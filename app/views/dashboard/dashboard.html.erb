@@ -8,7 +8,7 @@
 <% if current_user.role == "admin" %>
   <!-- Show activity feed of users and documents -->
   <div class="well text-center">
-    <h3>The activity feed goes here</h3>
+    <%= render 'documents/zoho_form', document: @document %>
   </div>
   <!-- Link to folders -->
 <% elsif current_user.role == "reporting" %>

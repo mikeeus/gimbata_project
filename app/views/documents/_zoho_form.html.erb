@@ -1,25 +1,12 @@
-<form method="POST" action="https://writer.zoho.com/writer/remotedoc.im" enctype="multipart/form-data" target="_self" 
-accept-charset="UTF-8">
-File : <input type="file" name="content" size="38"> <br>
-  <%= hidden_field_tag "apikey", Zoho_API_Key %>
+<form method="POST" action="https://writer.zoho.com/writer/remotedoc.im" target="_self" accept-charset="UTF-8">
+  <%= hidden_field_tag "url", document.file.url %>
+  <%= hidden_field_tag "apikey", "14429e369be91199e238ed416a579a84" %>
   <%= hidden_field_tag "output", "url" %>
   <%= hidden_field_tag "mode", "normaledit" %>
-  <%= hidden_field_tag "filename", "" %>
+  <%= hidden_field_tag "filename", document.file_file_name %>
   <%= hidden_field_tag "lang", "en" %>
-  <%= hidden_field_tag "id", "" %>
-  <%= hidden_field_tag "format", "" %>
-  <%= hidden_field_tag "saveurl", folder_document_path(@folder, document), method: "patch" %>
-  <%= hidden_field_tag "submit", "" %>
-
-
-
-  <input type="hidden" name="apikey" value="Zoho_API_Key">
-  <input type="hidden" name="output" value="url">
-  <input type="hidden" name="mode" value="normaledit">
-  <input type="hidden" name="filename" value="mydocument.docx">
-  <input type="hidden" name="lang" value="en">
-  <input type="hidden" name="id" value="12345678">
-  <input type="hidden" name="format" value="docx">
-  <input type="hidden" name="saveurl" value="https://example.com/docs/save.php">
-  <input type="submit" name="submit" value="Open">
+  <%= hidden_field_tag "id", document.id %>
+  <%= hidden_field_tag "format", "xlsx" %>
+  <%= hidden_field_tag "saveurl", root_url %>
+  <%= submit_tag "zoho" %>
 </form>

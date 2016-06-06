@@ -18,7 +18,7 @@
       <td><%= link_to "Download", document.file.url(:original, false), target: "_blank" %></td>
     <% end %>
     <!-- Excel and msword in browser Viewing/editing -->
-    <% if true # document.file_content_type.include?("msword") || document.file_content_type.include?("xls") %>
+    <% if false # document.file_content_type.include?("msword") || document.file_content_type.include?("xls") %>
       <% link_to "Edit", document.file.url(:original, false), target: "_blank" %>
       <td><a href="https://sheet.zoho.com/sheet/view.do?url=<%= document.file.url %>&name=newName">Zoho</a></td>
     <% else %>
