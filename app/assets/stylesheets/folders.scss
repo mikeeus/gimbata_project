@@ -56,10 +56,15 @@
       }
     }
   @media(max-width: 767px){
-    li {
-      border-bottom: 1px solid #E0E0E0;
+     #folder-tabs{
+      li {
+       /* border-bottom: 1px solid #E0E0E0;*/
+      }
+      .new-folder-button{
+      }
     }
-    .new-folder-button{
+    #folder-window{
+      padding-top: 10px;
     }
   }
 

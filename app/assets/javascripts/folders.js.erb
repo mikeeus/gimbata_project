@@ -1,0 +1,17 @@
+$(document).ready(function(){
+   justifyFoldersNav();
+   $(window).resize(justifyFoldersNav);
+});
+
+function justifyFoldersNav() {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+      if (!$("#folder-tabs-nav").hasClass('nav-justified')){
+        $("#folder-tabs-nav").addClass('nav-justified');
+      }
+  }
+  if (window.matchMedia('(min-width: 768px)').matches) {
+      if ($("#folder-tabs-nav").hasClass('nav-justified')){
+        $("#folder-tabs-nav").removeClass('nav-justified');
+      }
+  }
+}
