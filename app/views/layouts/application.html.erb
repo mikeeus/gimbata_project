@@ -16,13 +16,16 @@
         <%= render 'shared/sidebar' %>
       </div>
     <% end %>
-    <div id="content">
-      <div class="container-fluid">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+
+    <!-- Remaining content -->
+      <div id="content">
+        <div class="container-fluid">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
       </div>
-    </div>
   <% else %>
+  <!-- When not signed in -->
     <%= yield %>
   <% end %>
 </body>

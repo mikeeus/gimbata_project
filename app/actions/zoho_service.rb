@@ -20,7 +20,7 @@ class ZohoService
       "doc"
     elsif @content_type.include?("text/plain") || @content_type.include?("file/text")
       "txt"
-    elsif content_file = nil
+    elsif content_file == nil
       "nil"
     end
   end

@@ -19,18 +19,19 @@
   <% end %>
     <button type="button" class="btn btn-raised btn-success" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
       <%= render 'documents/document_upload_modal' %>
+
+    
     <h3 class="folder-title"><%= @folder.name %></h3>
-  </div>  
-</div>
-
-
-<table class="table" id="documentsTable">
-  <%= render 'documents/document_table_head' %>
-  <% if @documents.count > 0 %>
-    <% @documents.each do |document| %>
-      <% unless document.id == nil %>
-        <%= render 'documents/document_table_row', document: document %>
+   
+  <table class="table" id="documentsTable">
+    <%= render 'documents/document_table_head' %>
+    <% if @documents.count > 0 %>
+      <% @documents.each do |document| %>
+        <% unless document.id == nil %>
+          <%= render 'documents/document_table_row', document: document %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</table>
+  </table>
+</div> 
+</div>

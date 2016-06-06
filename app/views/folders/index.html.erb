@@ -1,15 +1,17 @@
-<!-- <div class="tabbable tabs-left clearfix"> -->
-<ul class="nav nav-tabs nav-justified" id="folder-tabs">
-  <% @folders.each do |folder| %>
-    <li role="presentation" class="folder-button"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
-  <% end %>
-    <li role="presentation" class="new-folder-button" ><%= link_to "Create new folder", new_folder_path, remote: true%></li>
-</ul>
-<div class="container-fluid" id="folder-window">
-  <% if @folder %>
-    <%= render 'documents/documents', folder: @folder %>
-  <% else %>
-    Select a folder above
-  <% end %>
+<div class="tabs-left clearfix" id="folder-tabs">
+    <ul class="nav nav-tabs">
+      <% @folders.each do |folder| %>
+        <li role="presentation" class="folder-button"><%= link_to folder.name, folder_documents_path(folder), remote: true %></li>
+      <% end %>
+        <li role="presentation" class="new-folder-button" ><%= link_to "Create new folder", new_folder_path, remote: true%></li>
+    </ul>
 </div>
-<!-- </div> -->
+<div id="folder-window">
+  <div class="container-fluid">
+    <% if @folder %>
+      <%= render 'documents/documents', folder: @folder %>
+    <% else %>
+      Select a folder
+    <% end %>
+  </div>
+</div>
