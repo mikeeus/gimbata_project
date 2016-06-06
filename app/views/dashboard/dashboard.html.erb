@@ -8,7 +8,17 @@
 <% if current_user.role == "admin" %>
   <!-- Show activity feed of users and documents -->
   <div class="well text-center">
-    <%= render 'documents/zoho_form', document: @document %>
+  <% @documents.each do |document| %>
+    <% if ZohoService.new(document).doc_or_spreadsheet? %>
+      <%= render 'documents/zoho_form', document: document %>
+      format: <%= ZohoService.new(document).file_format %> <br />
+      zoho_url: <%= ZohoService.new(document).zoho_url %> <br />
+      ... <br>
+    <% else %>
+      Nope
+      format: <%= ZohoService.new(document).file_format %> <br />
+    <% end %>
+  <% end %>
   </div>
   <!-- Link to folders -->
 <% elsif current_user.role == "reporting" %>

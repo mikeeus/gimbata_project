@@ -11,18 +11,23 @@ class Document < ActiveRecord::Base
         "image/png", "image/gif", "text/csv", "text/comma-separated-values"]},
       message: "Sorry, only Images (png, gif, jpeg or jpg), PDF, Excel, MSWord or plain text files are allowed."
 
-
-  def icon_url
-    if !self.file_content_type.nil?
-      content_type = self.file_content_type
-      url = content_type
-      if File.exists? url
-        url
-      else
-        "icon_default.png"
-      end
-    else
-      "icon_default.png"
+  def file_format
+    content_type = self.file_content_type
+    if content_type.include?("xlsx")
+      return "xlsx"
+    elsif content_type.include?("xls") || content_type.include?("excel")
+      return "xls"
+    elsif content_type.include?("spreadsheetml")
+      return "ods"
+    elsif content_type.include?("pdf")
+      return "pdf"
+    elsif content_type.include?("doc") || content_type.include?("msword")
+      return "doc"
+    elsif content_type.include?("text/plain") || content_type.include?("file/text")
+      return "txt"
+    elsif content_file = nil
+      return "nil"
     end
   end
+
 end

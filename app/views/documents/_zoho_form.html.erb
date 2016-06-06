@@ -1,4 +1,4 @@
-<form method="POST" action="https://sheet.zoho.com/sheet/remotedoc.im" target="_blank" accept-charset="UTF-8">
+<form method="POST" action="<%= ZohoService.new(document).zoho_url %>" target="_blank" accept-charset="UTF-8">
   <%= hidden_field_tag "url", document.file.url %>
   <%= hidden_field_tag "apikey", "14429e369be91199e238ed416a579a84" %>
   <%= hidden_field_tag "output", "editor" %>
@@ -6,7 +6,7 @@
   <%= hidden_field_tag "filename", document.file_file_name %>
   <%= hidden_field_tag "lang", "en" %>
   <%= hidden_field_tag "id", document.id %>
-  <%= hidden_field_tag "format", "xls" %>
+  <%= hidden_field_tag "format", document.file_format %>
   <%= hidden_field_tag "saveurl", root_url %>
   <%= submit_tag "zoho" %>
 </form>
