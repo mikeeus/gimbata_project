@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   private
     def redirect_to_dashboard
       if user_signed_in?
-        redirect_to dashboard_path
+        redirect_to folders_path
       end
     end
 end
