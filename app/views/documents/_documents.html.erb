@@ -1,5 +1,6 @@
 <div class="row">
   <div class="container-fluid">
+  <h4 class="folder-title"><%= @folder.name %></h4>
 
   <% if current_user.role == "admin" %>
     <!-- Folder Options -->
@@ -19,9 +20,6 @@
   <% end %>
     <button type="button" class="btn btn-raised btn-success" id="document-upload-button" data-toggle="modal" data-target="#documentUploadModal">Upload File</button>
       <%= render 'documents/document_upload_modal' %>
-
-    
-    <h3 class="folder-title"><%= @folder.name %></h3>
    
   <table class="table" id="documentsTable">
     <%= render 'documents/document_table_head' %>

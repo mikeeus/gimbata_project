@@ -34,6 +34,19 @@
       }
     }
   }
+  #folder-window{
+    .folder-title{
+      margin-top: 0px;
+    }
+    .folder-options-button{
+      button{
+        padding: 0px 5px;
+      }
+    }
+    #document-upload-button{
+      padding: 0px 5px;
+    }
+  }
   @media (min-width: 768px){
       #folder-tabs{
         height: 100%;
