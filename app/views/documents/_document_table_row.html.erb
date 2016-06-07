@@ -10,12 +10,11 @@
       <td></td>
       <td></td>
     <% end %>
-    <td><%= number_to_human_size(document.file_file_size) %></td>
     <td>
     <% if true %>
     <!-- ACTIONS DROPDOWN -->
       <div class="btn-group folder-options-button">
-        <button type="button" class="btn btn-default">-</button>
+        <button type="button" class="btn btn-default">Actions</button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
@@ -30,15 +29,17 @@
           <!-- msword or excel edit with zoho -->
           <% if document.doc_or_spreadsheet? %>
             <li>
-              <%= render 'documents/zoho_form', document: document %>
+              <a href="#">
+                <%= render 'documents/zoho_form', document: document %>
+              </a>
             </li>
           <% end %>
           <!-- If admin, delete link -->
           <% if current_user.role == "admin" %>
             <li role="seperator" class="divider"></li>
-            <li class="text-center">
+            <li>
               <%= link_to folder_document_path(@folder, document), remote: true, class: "document-delete", method: :delete, data: { confirm: "Are you sure?"} do %>
-              <i class="material-icons">clear</i>
+              Delete
               <% end %>
             </li>
           <% end %>
@@ -46,7 +47,7 @@
       </div>
       <% end %>
     </td>
-
+    <td><%= number_to_human_size(document.file_file_size) %></td>
     <!-- Put these links in the dropdown or popover -->
   </tr>
 </tbody>
