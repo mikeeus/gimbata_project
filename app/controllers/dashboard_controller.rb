@@ -2,7 +2,11 @@ class DashboardController < ApplicationController
   respond_to :html, :js
   
   def dashboard
-    @document = Document.find(94)
-    @documents = Document.all
+    unless current_user.admin?
+      redirect_to folders_path
+    end
+  end
+
+  def settings
   end
 end

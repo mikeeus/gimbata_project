@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard' => 'dashboard#dashboard', as: :dashboard
-  get 'settings'  => 'static_pages#settings', as: :settings
+  get 'settings'  => 'dashboard#settings',  as: :settings
 
 
 

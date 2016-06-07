@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
-  before_action :redirect_to_dashboard
-  skip_before_filter :authenticate_user!
+  before_action :redirect_to_dashboard, only: [:homepage]
+  skip_before_filter :authenticate_user!, only: [:homepage]
 
   def homepage
   end
@@ -8,7 +8,11 @@ class StaticPagesController < ApplicationController
   private
     def redirect_to_dashboard
       if user_signed_in?
-        redirect_to folders_path
+        if current_user.admin?
+          redirect_to dashboard_path
+        else
+          redirect_to folders_path
+        end
       end
     end
 end

@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
       styles: { thumb: "100x100#", small: "150x150#", medium: "300x300#"},
       content_type: { content_type: [
         "image/jpg", "image/jpeg", "image/png", "image/gif"]},
-      message: "Sorry, only png, gif, jpeg or jpg."
+      message: "Sorry, only png, gif, jpeg or jpg.",
+      default_url: "/images/avatars/:style/avatar_default.jpg"
+  
 
   enum role: [:standard, :reporting, :admin]
 

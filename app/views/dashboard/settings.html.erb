@@ -1,0 +1,26 @@
+<div class="row" id="settings-row">
+<!-- Left use info panel -->
+  <div class="col-sm-4" id="user-info">
+    <div class="text-center">
+      <%= image_tag current_user.avatar.url(:small) %>
+      <h4><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
+      <p>Position</p>
+      <ul class="list-group">
+        <li class="list-group-item"><%= current_user.email %></li>
+        <li class="list-group-item">Joined: <%= current_user.created_at %></li>
+        <li class="list-group-item">Last login: <%= current_user.last_sign_in_at %></li>
+      </ul>
+    </div>
+
+    <div>
+
+    </div>
+  </div>
+
+<!-- Main panel for settings -->
+  <div class="col-sm-8" id="user-settings">
+    <!-- Form for editing user information -->
+    <%= render 'dashboard/user_edit_form', resource: current_user %>
+    <!-- Other settings like notifications, etc. -->
+  </div>
+</div>
