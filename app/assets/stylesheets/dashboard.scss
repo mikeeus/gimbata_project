@@ -1,9 +1,29 @@
-.activity-file-name{
-  font-weight: bold;
-  color: #7E57C2;
+#activity-feed{
+  .glyphicon-plus{
+    color: #4CAF50;
+  }
+  .glyphicon-remove{
+    color: #F44336;
+  }
+  .activity-file-name{
+    font-weight: bold;
+    color: #7E57C2;
+  }
+
+  .activity-folder-name{
+    font-weight: bold;
+    color: #607D8B;
+  }
 }
 
-.activity-folder-name{
-  font-weight: bold;
-  color: #607D8B;
+.glyphicon-update {
+  @extend .glyphicon-edit !optional;
+}
+
+.glyphicon-create {
+  @extend .glyphicon-plus !optional;
+}
+
+.glyphicon-destroy {
+  @extend .glyphicon-remove !optional;
 }

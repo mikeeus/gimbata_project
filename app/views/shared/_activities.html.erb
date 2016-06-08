@@ -3,3 +3,27 @@
     <%= render_activities @activities %>
   </ul>
 </div>
+
+
+
+<!-- For use with i18n, but only after fixing the scss @extend issue -->
+<% if false %>
+
+<div class="">
+  <ul class="list-group">
+    <% @activities.each do |activity| %>
+      <li class="list-group-item">
+        <span class="glyphicon glyphicon-<%= activity.key.match(/\.(.*)/)[1] %>"></span>
+        <strong><%= activity.owner ? activity.owner.first_name : 'Guest' %></strong>
+        <%= render_activity activity, display: :i18n %>
+        <% if activity.trackable %>
+          "<span class="activity-file-name"><%= activity.trackable.name %></span>"
+        <% else %>
+          with unknown title.
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% end %>

@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activity:
+    document:
+      create: 'has uploaded a document'
+      destroy: 'has removed a document'
+      update: 'has edited a document'
