@@ -1,17 +1,16 @@
-<div class="panel panel-default text-center">
-  <div class="panel-body">
-    <h1>Welcome, <%= current_user.first_name%> <%= current_user.last_name %></h1>
-    <button class="btn btn-lg btn-default"><%= link_to "View folders", folders_path %></button>
-  </div>
+<div class="col-md-3">
+
 </div>
 
-<% if current_user.role == "admin" %>
-  <!-- Show activity feed of users and documents -->
-  <div class="well text-center">
+<!--  -->
+<div class="col-md-6">
+  <div class="panel-body">
+    <h1>Recent Activity</h1>
   </div>
-  <!-- Link to folders -->
-<% elsif current_user.role == "reporting" %>
-  <!-- Show folder for the current_user's allowed folders -->
-<% elsif current_user.role == "standard" %>
-  <!-- Not sure why this role even exists lol -->
-<% end %>
+  <ul>
+    <% @documents.each do |document| %>
+    <!-- Use papertrail for activity feed -->
+      <li><span class="glyphicon glyphicon-remove"></span><%= document.name %> - edited at: <%= document.updated_at %></li>
+    <% end %>
+  </ul>
+</div>

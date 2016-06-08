@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
 
   private
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:company_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:company_id, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
     # Add avatar as a permitted parameter
   end
 end

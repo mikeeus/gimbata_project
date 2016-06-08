@@ -7,11 +7,12 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_attached_file :avatar
   validates_attachment :avatar,
+      default_url: "images/avatars/:style/avatar_default.jpg",
       styles: { thumb: "100x100#", small: "150x150#", medium: "300x300#"},
       content_type: { content_type: [
         "image/jpg", "image/jpeg", "image/png", "image/gif"]},
-      message: "Sorry, only png, gif, jpeg or jpg.",
-      default_url: "/images/avatars/:style/avatar_default.jpg"
+      message: "Sorry, only png, gif, jpeg or jpg."
+      
   
 
   enum role: [:standard, :reporting, :admin]

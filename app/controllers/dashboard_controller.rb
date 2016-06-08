@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     unless current_user.admin?
       redirect_to folders_path
     end
+    @documents = @company.documents.order('updated_at DESC')
   end
 
   def settings

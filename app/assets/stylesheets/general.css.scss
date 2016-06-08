@@ -103,8 +103,7 @@
 /*CONTENT*/
   #content{
     z-index: -1;
-    overflow: scroll;
-    padding-top: 15px;
+    overflow-y: scroll;
     min-width: 200px;
     margin-left: 0px;
   }
