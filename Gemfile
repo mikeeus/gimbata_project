@@ -26,6 +26,8 @@ gem 'remotipart'
 # Use compass to manage css3 vendor prefixes
 gem 'compass-rails'
 gem 'compass'
+# Use activity feed to implement... dun dun dun... an activity feed
+gem 'public_activity'
 # # Use pdfjsviewer to view pdfs in the browser
 # gem 'pdfjs_viewer-rails'
 # # Use roo to work with spreadsheets
