@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_action :load_activities, only: [:index, :create, :destroy, :edit]
   before_action :correct_folder_and_documents, only: [:index, :create, :destroy, :edit]
   before_action :apikey
   respond_to :html, :js
@@ -43,5 +44,9 @@ class DocumentsController < ApplicationController
 
     def apikey
       @apikey = "14429e369be91199e238ed416a579a84"
+    end
+
+    def load_activities
+      @activities = PublicActivity::Activity.order('created_at DESC').limit(20)
     end
 end
