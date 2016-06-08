@@ -12,7 +12,7 @@ class Document < ActiveRecord::Base
       message: "Sorry, only Images (png, gif, jpeg or jpg), PDF, Excel, MSWord or plain text files are allowed."
 
   include PublicActivity::Model
-  tracked
+  tracked owner: Proc.new { |controller, model| controller.current_user }
 
   def file_format
     content_type = self.file_content_type

@@ -6,12 +6,16 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user! # disable on homepage
   before_action :current_company
 
+  include PublicActivity::StoreController
   include ApplicationHelper
 
+
+
   private
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:company_id, :avatar])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
-    # Add avatar as a permitted parameter
-  end
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:company_id, :avatar])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:avatar])
+      # Add avatar as a permitted parameter
+    end
+
 end
