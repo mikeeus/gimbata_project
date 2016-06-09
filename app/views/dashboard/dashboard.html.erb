@@ -1,5 +1,18 @@
 <div class="row">
   <div class="col-sm-6">
+  <!-- Users section -->
+    <div class="users-section">
+      <p class="permissions-link"><%= link_to 'Manage Permissions', permissions_path %></p>
+      <h3>Users</h3>
+        <ul class="list-group">
+        <% @users.each do |user| %>
+          <% unless user == current_user %>
+            <li class="list-group-item"><span class="user-name"><%= user.first_name %> <%= user.last_name %></span> <span class="user-position"><%= user.position %></span></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <!-- Company Details -->
     <h3><%= @company.name %></h3>
     <ul class="list-group">
       <li class="list-group-item">Address: <%= @company.address %></li>
@@ -9,15 +22,8 @@
       <li class="list-group-item">Description: <%= @company.description %></li>
       <li class="list-group-item">Tin Number: 001122334455</li>
     </ul>
-    <h3>Users</h3>
-    <p><%= link_to 'Manage Permissions', permissions_path %></p>
-      <ul class="list-group">
-      <% @users.each do |user| %>
-        <% unless user == current_user %>
-          <li class="list-group-item"><span class="user-name"><%= user.first_name %> <%= user.last_name %></span> <span class="user-position"><%= user.position %></span></li>
-        <% end %>
-      <% end %>
-    </ul>
+
+    
   </div>
 
   <!--  -->

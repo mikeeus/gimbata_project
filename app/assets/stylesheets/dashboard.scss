@@ -27,3 +27,10 @@
 .glyphicon-destroy {
   @extend .glyphicon-remove !optional;
 }
+
+.users-section{
+  .permissions-link{
+    margin-top: 20px;
+    float: right;
+  }
+}
