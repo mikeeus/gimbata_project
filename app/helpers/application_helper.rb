@@ -14,7 +14,9 @@ module ApplicationHelper
     if user_signed_in?
       @company = current_user.company
       @folders = @company.folders
-      @users = @company.users
+      if current_user.admin?
+        @users = @company.users
+      end
     end
   end
 
