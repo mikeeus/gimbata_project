@@ -13,6 +13,7 @@ Company.create!(
   city: "Addis Ababa",
   country: "Ethiopia",
   description: "A construction company"
+  tin: "001122334455"
 )
 
 users = User.create!([
@@ -28,31 +29,31 @@ users = User.create!([
   },
   { 
     company_id: 1,
-    first_name: "Samius",
-    last_name: "Abera",
+    first_name: "Endalkachew",
+    last_name: "Gezahegn",
     position: "Project Manager",
     role: 0,
-    email: "samius@trustconstruction.com",
+    email: "endalkachew.g@trustconstruction.com",
     password: "password",
     password_confirmation: "password"
   },
   { 
     company_id: 1,
-    first_name: "Mikias",
-    last_name: "Abera",
-    position: "Office Manager",
+    first_name: "Selam",
+    last_name: "Berhanu",
+    position: "Site Engineer",
     role: 0,
-    email: "mikias@trustconstruction.com",
+    email: "selam.b@trustconstruction.com",
     password: "password",
     password_confirmation: "password"
   },
   { 
     company_id: 1,
-    first_name: "Baby",
-    last_name: "Getaneh",
-    position: "Tender Analyst",
+    first_name: "Meserete",
+    last_name: "Melese",
+    position: "Office Engineer",
     role: 0,
-    email: "mikias@trustconstruction.com",
+    email: "meserete.m@trustconstruction.com",
     password: "password",
     password_confirmation: "password"
   }
@@ -78,5 +79,9 @@ folders = Folder.create([
   { 
     company_id: 1,
     name: "Past Tenders"
+  },
+  { 
+    company_id: 1,
+    name: "Payment Receipts"
   }
   ])

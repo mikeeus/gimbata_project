@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     resources :documents
   end
 
-  get 'dashboard' => 'dashboard#dashboard', as: :dashboard
-  get 'settings'  => 'dashboard#settings',  as: :settings
+  get 'dashboard'    => 'dashboard#dashboard',    as: :dashboard
+  get 'settings'     => 'dashboard#settings',     as: :settings
+  get 'permissions'  => 'dashboard#permissions',  as: :permissions
 
 
 

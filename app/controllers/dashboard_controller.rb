@@ -12,6 +12,10 @@ class DashboardController < ApplicationController
   def settings
   end
 
+  def permissions
+    
+  end
+
   private
     def load_activities
       if current_user && current_user.admin?

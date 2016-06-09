@@ -7,6 +7,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string   :city
       t.string   :country
       t.string   :description
+      t.string   :tin
       
       t.timestamps null: false
     end
