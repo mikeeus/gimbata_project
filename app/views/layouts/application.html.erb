@@ -10,7 +10,7 @@
 <%= render 'shared/header' %>
 
   <% if user_signed_in? %>
-    <% unless @disable_sidebar %>
+    <% unless true #@disable_sidebar %>
       <div class="sidebar-collapsed" id="sidebar">
         <%= render 'shared/sidebar_button' %>
         <%= render 'shared/sidebar' %>

@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
       
   
 
-  enum role: [:standard, :reporting, :admin]
+  enum role: [:normal, :admin]
 
   # For permissions, user should have attribute to hold folder ids that can be accessed
   # Maybe admins have a value of 0 for full access of folders?

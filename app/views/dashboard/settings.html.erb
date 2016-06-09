@@ -4,11 +4,11 @@
     <div class="text-center">
       <%= image_tag 'avatars/small/avatar_default.jpg' %>
       <h4><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
-      <p>Position</p>
+      <p><%= current_user.position %></p>
       <ul class="list-group">
         <li class="list-group-item"><%= current_user.email %></li>
-        <li class="list-group-item">Joined: <%= current_user.created_at %></li>
-        <li class="list-group-item">Last login: <%= current_user.last_sign_in_at %></li>
+        <li class="list-group-item">Joined: <%= current_user.created_at.strftime('%B %-d, %Y') %></li>
+        <li class="list-group-item">Last login: <%= current_user.last_sign_in_at.strftime('%B %-d, %Y') %></li>
       </ul>
     </div>
 

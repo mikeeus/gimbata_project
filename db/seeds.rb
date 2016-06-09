@@ -15,55 +15,68 @@ Company.create!(
   description: "A construction company"
 )
 
-User.create!(
-  company_id: 1,
-  first_name: "Mikias",
-  last_name: "Abera",
-  position: "Office Manager",
-  role: 2,
-  email: "mikias@gimbata.com",
-  password: "password",
-  password_confirmation: "password"
-)
+users = User.create!([
+  { 
+    company_id: 1,
+    first_name: "Melkam",
+    last_name: "Abera",
+    position: "Administrator",
+    role: 1,
+    email: "melkam@trustconstruction.com",
+    password: "password",
+    password_confirmation: "password"
+  },
+  { 
+    company_id: 1,
+    first_name: "Samius",
+    last_name: "Abera",
+    position: "Project Manager",
+    role: 0,
+    email: "samius@trustconstruction.com",
+    password: "password",
+    password_confirmation: "password"
+  },
+  { 
+    company_id: 1,
+    first_name: "Mikias",
+    last_name: "Abera",
+    position: "Office Manager",
+    role: 0,
+    email: "mikias@trustconstruction.com",
+    password: "password",
+    password_confirmation: "password"
+  },
+  { 
+    company_id: 1,
+    first_name: "Baby",
+    last_name: "Getaneh",
+    position: "Tender Analyst",
+    role: 0,
+    email: "mikias@trustconstruction.com",
+    password: "password",
+    password_confirmation: "password"
+  }
+  ])
 
-User.create!(
-  company_id: 1,
-  first_name: "Samius",
-  last_name: "Abera",
-  position: "Office Manager",
-  role: 1,
-  email: "samius@gimbata.com",
-  password: "password",
-  password_confirmation: "password"
-)
-
-User.create!(
-  company_id: 1,
-  first_name: "Spiers",
-  last_name: "Damazing",
-  position: "Office Manager",
-  role: 0,
-  email: "spiers@gimbata.com",
-  password: "password",
-  password_confirmation: "password"
-)
-
-Folder.create!(
-  company_id: 1,
-  name: "40/60 Condominiums"
-)
-
-Folder.create!(
-  company_id: 1,
-  name: "Dedhessa Primary Hospital"
-)
-
-Folder.create!(
-  company_id: 1,
-  name: "Wogeda Primary Hospital"
-)
-
-Folder.create!(
-  company_id: 1,
-  name: "Dessie UCBP"
-)
+folders = Folder.create([
+  { 
+    company_id: 1,
+    name: "Company Profile"
+  },
+  { 
+    company_id: 1,
+    name: "Professional Licenses"
+  },
+  { 
+    company_id: 1,
+    name: "Tender Files"
+  },
+  { 
+    company_id: 1,
+    name: "Current Tenders"
+  },
+  { 
+    company_id: 1,
+    name: "Past Tenders"
+  }
+  ])
