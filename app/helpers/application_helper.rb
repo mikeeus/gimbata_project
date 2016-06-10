@@ -15,6 +15,7 @@ module ApplicationHelper
       @company = current_user.company
       @folders = @company.folders
       if current_user.admin?
+        # excluding self
         @users = @company.users
       end
     end

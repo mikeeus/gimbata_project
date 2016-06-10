@@ -35,11 +35,13 @@ class FoldersController < ApplicationController
     @folder.destroy
     redirect_to folders_path
   end
+  
   private
 
     def company_folders
       @folders = @company.folders
     end
+
     def folder_params
       params.require(:folder).permit(:name)
     end
