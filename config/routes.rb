@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'folders#index'
 
   resources :company, only: [:show]
-  resources :users, only: [:show, :index, :edit, :update] do
+  resources :users, only: [:index, :edit, :update, :destroy] do
     resources :permissions, only: [:create, :destroy, :index]
   end
   resources :folders do

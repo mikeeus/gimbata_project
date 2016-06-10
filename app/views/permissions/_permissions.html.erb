@@ -3,14 +3,11 @@
   <% unless user == current_user %>
     <div class="list-group" id="permission-list-user-<%= user.id %>">
       <li class="list-group-item">
-        <p class="list-group-item-heading">
-          <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
-        </p>
-      </li>  
+
         <!-- Add Folder Dropdown -->
         <li class="dropdown permissions-dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">Add Folder <span class="caret"></span></a>
-          <ul class="dropdown-menu">
+          <a href="#" class="dropdown-button dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">Add Folder <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
             <% @folders.each do |folder| %>
               <% unless folder.can_be_accessed_by?(user) %>
                 <li>
@@ -18,7 +15,7 @@
                     <%= form_for(@permission, url: user_permissions_path(user), method: :post, remote: true ) do |f| %>
                       <%= hidden_field_tag 'user_id', user.id %>
                       <%= hidden_field_tag 'folder_id', folder.id %>
-                      <%= f.submit folder.name, class: "btn btn-default permissions-dropdown-button" %>
+                      <%= f.submit folder.name, class: "btn btn-default dropdown-menu-buttons" %>
                     <% end %>
                   </a>
                 </li>
@@ -27,6 +24,11 @@
           </ul>
         </li>
 
+        <p class="list-group-item-heading">
+          <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
+        </p>
+      </li>  
+        
       <% user.permissions.each do |permission| %>
         <% unless permission.id == nil %>
           <%= render 'permissions/permission_list_item', permission: permission, user: user %>
