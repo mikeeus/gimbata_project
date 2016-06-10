@@ -29,26 +29,6 @@ users = User.create!([
   },
   { 
     company_id: 1,
-    first_name: "Endalkachew",
-    last_name: "Gezahegn",
-    position: "Project Manager",
-    role: 0,
-    email: "endalkachew.g@trustconstruction.com",
-    password: "password",
-    password_confirmation: "password"
-  },
-  { 
-    company_id: 1,
-    first_name: "Selam",
-    last_name: "Berhanu",
-    position: "Site Engineer",
-    role: 0,
-    email: "selam.b@trustconstruction.com",
-    password: "password",
-    password_confirmation: "password"
-  },
-  { 
-    company_id: 1,
     first_name: "Meserete",
     last_name: "Melese",
     position: "Office Engineer",
@@ -87,20 +67,5 @@ folders = Folder.create([
   { 
     company_id: 1,
     name: "Payment Receipts"
-  }
-  ])
-
-comments = Comment.create!([
-  {
-    subject: "The folders don't load",
-    content: "When I visit this page the folders don't load right away, and sometimes when i click on a different folder, it doesn't show up."
-  },
-  {
-    subject: "Permissions delayed",
-    content: "When I add a folder to a user's permission, it is delayed for a long time."
-  },
-  {
-    subject: "Change the color to pink",
-    content: "I like the color pink a lot, so much that I think you should change the site color to that!"
   }
   ])
