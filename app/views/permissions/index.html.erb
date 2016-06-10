@@ -1,0 +1,16 @@
+<div class="col-md-8 col-md-offset-2 permissions">
+  <h1 class="text-center">User Permissions</h1>
+
+  <% @users.each do |user| %>
+    <ul class="list-group" id="permission-list-user-<%= user.id %>">
+    <span class="user-name"><%= user.first_name %> <%= user.position %></span><span class="permission-add glyphicon glyphicon-plus"></span>
+      <% user.permissions.each do |permission| %>
+        <li class="list-group-item" id="permission-for-user-<%= permission.user_id %>-folder-<%= permission.folder_id %>"><%= permission.folder.name %>
+          <%= link_to permission_path(permission), remote: true, method: :delete, data: { confirm: "Are you sure?" }, class: "permission-remove glyphicon glyphicon-remove" do %>
+          <% end %>
+        </li>
+      <% end %>
+    <!-- Add permission -->
+    </ul>
+  <% end %>
+</div>

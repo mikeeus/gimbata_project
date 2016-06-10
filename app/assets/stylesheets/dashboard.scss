@@ -38,8 +38,17 @@
   }
 }
 
-.permissions{
-  .user-name{
-    font-weight: bold;
+/*Permissions*/
+  .permissions{
+    .user-name{
+      font-weight: bold;
+    }
+    .permission-add{
+      float: right;
+      color: #4CAF50;
+    }
+    .permission-remove{
+      float: right;
+      color: #F44336;
+    }
   }
-}

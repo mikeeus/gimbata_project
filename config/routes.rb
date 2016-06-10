@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   resources :folders do
     resources :documents
   end
+  resources :permissions, only: [:create, :destroy, :index]
 
   get 'dashboard'    => 'dashboard#dashboard',    as: :dashboard
   get 'settings'     => 'dashboard#settings',     as: :settings
-  get 'permissions'  => 'dashboard#permissions',  as: :permissions
+  # get 'permissions'  => 'dashboard#permissions',  as: :user_management
 
 
 
