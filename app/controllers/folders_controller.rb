@@ -44,4 +44,8 @@ class FoldersController < ApplicationController
       params.require(:folder).permit(:name)
     end
 
+    private
+      # def accessible_folder
+        
+      # end
 end

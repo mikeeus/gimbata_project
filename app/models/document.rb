@@ -42,4 +42,10 @@ class Document < ActiveRecord::Base
     end
   end
 
+  # Permissions
+  def can_be_accessed_by?(user)
+    # the parent folder should have an attribute to track permitted users
+    self.folder.can_be_accessed_by?(user)
+  end
+
 end

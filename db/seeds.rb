@@ -12,7 +12,7 @@ Company.create!(
   address: "123 Fake Street",
   city: "Addis Ababa",
   country: "Ethiopia",
-  description: "A construction company"
+  description: "A construction company",
   tin: "001122334455"
 )
 
@@ -60,6 +60,10 @@ users = User.create!([
   ])
 
 folders = Folder.create([
+  { 
+    company_id: 1,
+    name: "General Files"
+  },
   { 
     company_id: 1,
     name: "Company Profile"

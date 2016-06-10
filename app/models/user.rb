@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :company
+  has_many :permissions
   has_attached_file :avatar
   validates_attachment :avatar,
       default_url: "avatars/:style/avatar_default.jpg",
@@ -19,4 +20,9 @@ class User < ActiveRecord::Base
 
   # For permissions, user should have attribute to hold folder ids that can be accessed
   # Maybe admins have a value of 0 for full access of folders?
+  def can_access?(resource)
+    resource.can_be_accessed_by?(self)
+  end
+
+
 end
