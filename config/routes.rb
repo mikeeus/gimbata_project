@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :company, only: [:show]
   resources :users, only: [:index, :edit, :update, :destroy] do
     resources :permissions, only: [:create, :destroy, :index]
+    resources :comments, only: [:show, :index, :create]
   end
   resources :folders do
     resources :documents

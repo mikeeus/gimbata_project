@@ -1,0 +1,15 @@
+<div class="col-md-8 col-md-offset-2">
+  <h3>Comments</h3>
+  <ul class="list-group">
+    <% @comments.each do |comment| %>
+      <li class="list-group-item">
+        <% unless comment.created_at.nil? %>
+          <small class="comment-created-at"><%= comment.commented_page %> | <%= comment.created_at.strftime("%H:%M%P %B %e") %></small>
+        <% end %>
+        <h5 class="list-group-item-heading"><%= comment.subject %></h5>
+        <p class="list-group-item-text"><%= comment.content %></p>
+        
+      </li>
+    <% end %>
+  </ul>
+</div>

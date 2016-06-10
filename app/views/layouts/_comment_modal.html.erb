@@ -1,0 +1,27 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="commentModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      Add Comment
+      </div>
+      <div class="modal-body">
+        <%= form_for(@comment, url: user_comments_path(current_user)) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+
+          <%= f.label :commented_page %>
+          <%= f.text_field :commented_page, value: request.original_url %>
+
+          <%= f.label :subject %>
+          <%= f.text_field :subject, class: 'form-control' %>
+
+          <%= f.label :comment %>
+          <%= f.text_area :content, class: 'form-control' %>
+        
+      </div>
+      <div class="modal-footer">
+          <%= f.submit "Add Comment", class: "btn btn-primary form-control" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div> 

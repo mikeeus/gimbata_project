@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :disable_sidebar, if: :devise_controller?
   before_action :authenticate_user! # disable on homepage
   before_action :current_company
+  before_action :current_comment
 
   include PublicActivity::StoreController
   include ApplicationHelper

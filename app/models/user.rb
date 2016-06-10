@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :company
   has_many :permissions
+  has_many :comments
   has_attached_file :avatar
   validates_attachment :avatar,
       default_url: "avatars/:style/avatar_default.jpg",

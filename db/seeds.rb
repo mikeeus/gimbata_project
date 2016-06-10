@@ -89,3 +89,18 @@ folders = Folder.create([
     name: "Payment Receipts"
   }
   ])
+
+comments = Comment.create!([
+  {
+    subject: "The folders don't load",
+    content: "When I visit this page the folders don't load right away, and sometimes when i click on a different folder, it doesn't show up."
+  },
+  {
+    subject: "Permissions delayed",
+    content: "When I add a folder to a user's permission, it is delayed for a long time."
+  },
+  {
+    subject: "Change the color to pink",
+    content: "I like the color pink a lot, so much that I think you should change the site color to that!"
+  }
+  ])

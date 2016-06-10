@@ -15,6 +15,13 @@ module ApplicationHelper
     redirect_to(root_url) unless current_user.role == "admin"
   end
 
+  # Comments
+  def current_comment
+    if user_signed_in?
+      @comment = current_user.comments.build
+    end 
+  end
+
   # Company down instance variables
   def current_company
     if user_signed_in?
