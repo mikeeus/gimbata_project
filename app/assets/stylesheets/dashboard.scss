@@ -36,6 +36,9 @@
   .user-name{
     font-weight: bold;
   }
+  .user-position{
+    font-weight: 100;
+  }
 }
 
 /*Permissions*/
@@ -68,12 +71,21 @@
         padding: 2px 10px;
         margin: 0px;
       }
-    } 
+    }
+    .folder-icon{
+      margin-right: 10px;
+    }
+    .user-permissions-heading{
+      padding: 0px 10px;
+    }
   }
 
   .users{
     .delete-user-button{
       float: right;
       color: #F44336;
+    }
+    .user-icon{
+      margin-right: 10px;
     }
   }

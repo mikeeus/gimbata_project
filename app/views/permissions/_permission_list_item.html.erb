@@ -1,5 +1,5 @@
   <li class="list-group-item" id="permission-for-user-<%= permission.user_id %>-folder-<%= permission.folder_id %>">
-    <%= permission.folder.name %>
+    <span class="glyphicon glyphicon-folder-open folder-icon"></span><%= permission.folder.name %>
     <!-- Remove permission button -->
       <%= link_to user_permission_path(user, permission), remote: true, method: :delete, data: { confirm: "Are you sure?" }, class: "permission-remove glyphicon glyphicon-remove" do %>
       <% end %>

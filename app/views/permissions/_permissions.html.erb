@@ -24,9 +24,10 @@
           </ul>
         </li>
 
-        <p class="list-group-item-heading">
+        <!-- USER INFO -->
+        <h4 class="list-group-item-heading user-permissions-heading">
           <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
-        </p>
+        </h4>
       </li>  
         
       <% user.permissions.each do |permission| %>
