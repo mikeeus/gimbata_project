@@ -5,4 +5,8 @@ class CompanyController < ApplicationController
 
   def files
   end
+
+  def update
+    
+  end
 end
