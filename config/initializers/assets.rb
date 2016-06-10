@@ -14,4 +14,4 @@ Rails.application.config.assets.precompile << /\.(?:png|jpg|jpeg|gif)\z/
 # Rails.application.config.assets.precompile += %w( search.js )
 
 # Google this one
-Rails.application.config.serve_static_assets = false
+Rails.application.config.serve_static_assets = true
