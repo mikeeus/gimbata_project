@@ -1,2 +1,3 @@
-$('#permission-for-user-<%= @permission.user_id %>-folder-<%= @permission.folder_id %>').hide();
-$('#folder-<%= @permission.folder_id %>').show();
+// $('#permission-for-user-<%= @permission.user_id %>-folder-<%= @permission.folder_id %>').hide();
+// $('#addPermissionModal-<%= @permission.user_id %> #folder-<%= @permission.folder_id %>').show();
+$('#permissions').html("<%= j render('permissions/permissions')%>");

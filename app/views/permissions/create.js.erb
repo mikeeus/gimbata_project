@@ -1,6 +1,8 @@
 <% if @permission.new_record? %>
   alert('The file could not be uploaded: <%= j @permission.errors.full_messages.join(', ').html_safe %>');
 <% else %>
-  $('#permission-list-user-<%= @permission.user_id %>').append("<%= j (render 'permissions/permission_list_item', permission: @permission, user: @user) %>");
-  $('#folder-<%= @permission.folder_id %>').hide();
+  // $('#permission-list-user-<%= @permission.user_id %>').append("<%= j (render 'permissions/permission_list_item', permission: @permission, user: @user) %>");
+  $('#permissions').html("<%= j render('permissions/permissions')%>");
+  // $('.modal-backdrop').remove();
+  // $('body').removeClass('modal-open');
 <% end %>

@@ -1,12 +1,34 @@
-<p class="list-group-item-heading">
-  <span class="user-name"><%= user.first_name %> <%= user.position %></span>
-  <!-- Add permission button -->
-  <button type="button" class="btn btn-success permission-add glyphicon glyphicon-plus" id="add-permission-modal-button" data-toggle="modal" data-target="#addPermissionModal"></button>
-  <%= render 'permissions/add_permission_modal', user: user %>
-</p>
+<h3 class="text-center">Permissions</h3>
+<% @users.each do |user| %>
+  <% unless user == current_user %>
+    <div class="list-group" id="permission-list-user-<%= user.id %>">
+      <p class="list-group-item-heading">
+        <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
+        
+        <li class="dropdown permissions-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">Add Permission <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% @folders.each do |folder| %>
+              <% unless folder.can_be_accessed_by?(user) %>
+                <li>
+                  <a href="#">
+                    <%= form_for(@permission, url: user_permissions_path(user), method: :post, remote: true ) do |f| %>
+                      <%= hidden_field_tag 'user_id', user.id %>
+                      <%= hidden_field_tag 'folder_id', folder.id %>
+                      <%= f.submit folder.name, class: "btn btn-default permissions-dropdown-button" %>
+                    <% end %>
+                  </a>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
 
-<% user.permissions.each do |permission| %>
-  <% unless permission.id == nil %>
-    <%= render 'permissions/permission_list_item', permission: permission, user: user %>
+      <% user.permissions.each do |permission| %>
+        <% unless permission.id == nil %>
+          <%= render 'permissions/permission_list_item', permission: permission, user: user %>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 <% end %>
