@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @permission = Permission.new
   end
 
   def edit

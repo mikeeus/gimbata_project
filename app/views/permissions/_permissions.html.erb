@@ -1,0 +1,12 @@
+<p class="list-group-item-heading">
+  <span class="user-name"><%= user.first_name %> <%= user.position %></span>
+  <!-- Add permission button -->
+  <button type="button" class="btn btn-success permission-add glyphicon glyphicon-plus" id="add-permission-modal-button" data-toggle="modal" data-target="#addPermissionModal"></button>
+  <%= render 'permissions/add_permission_modal', user: user %>
+</p>
+
+<% user.permissions.each do |permission| %>
+  <% unless permission.id == nil %>
+    <%= render 'permissions/permission_list_item', permission: permission, user: user %>
+  <% end %>
+<% end %>

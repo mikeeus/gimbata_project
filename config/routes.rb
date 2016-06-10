@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   root 'static_pages#homepage'
 
   resources :company, only: [:show]
-  resources :users, only: [:show, :index, :edit, :update]
+  resources :users, only: [:show, :index, :edit, :update] do
+    resources :permissions, only: [:create, :destroy, :index]
+  end
   resources :folders do
     resources :documents
   end
-  resources :permissions, only: [:create, :destroy, :index]
+  
 
   get 'dashboard'    => 'dashboard#dashboard',    as: :dashboard
   get 'settings'     => 'dashboard#settings',     as: :settings

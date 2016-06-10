@@ -2,11 +2,18 @@ class PermissionsController < ApplicationController
   respond_to :html, :js
   
   def create
-    # @permission = @user.permissions.build    
+    @user = @users.find_by_id(params[:user_id])
+    @permission = Permission.new(folder_id: params[:folder_id], user_id: params[:user_id])
+    @permission.save
   end
 
   def destroy
     @permission = Permission.find_by_id(params[:id])
     @permission.destroy
   end
+
+  private
+    def permission_params
+      params.require(:permission).permit(:folder_id, :user_id)
+    end
 end
