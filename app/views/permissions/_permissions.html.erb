@@ -2,11 +2,14 @@
 <% @users.each do |user| %>
   <% unless user == current_user %>
     <div class="list-group" id="permission-list-user-<%= user.id %>">
-      <p class="list-group-item-heading">
-        <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
-        
+      <li class="list-group-item">
+        <p class="list-group-item-heading">
+          <span class="user-name"><%= user.first_name %></span> <span class="user-position"><%= user.position %></span>
+        </p>
+      </li>  
+        <!-- Add Folder Dropdown -->
         <li class="dropdown permissions-dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">Add Permission <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false">Add Folder <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <% @folders.each do |folder| %>
               <% unless folder.can_be_accessed_by?(user) %>
