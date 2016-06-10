@@ -7,9 +7,8 @@ class Document < ActiveRecord::Base
         "application/pdf", "application/xls", "application/xlsx", 
         "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", 
         "application/msword", "application/doc",  
-        "text/plain","file/text", "image/jpg", "image/jpeg", 
-        "image/png", "image/gif", "text/csv", "text/comma-separated-values"]},
-      message: "Sorry, only Images (png, gif, jpeg or jpg), PDF, Excel, MSWord or plain text files are allowed."
+        "text/plain", "text/csv"]},
+      message: "Sorry, only PDF, Excel, MSWord or plain text files are allowed."
 
   include PublicActivity::Model
   tracked owner: Proc.new { |controller, model| controller.current_user }

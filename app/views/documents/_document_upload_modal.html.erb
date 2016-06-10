@@ -54,14 +54,14 @@
       dataType: 'script',
       dropZone: $('#dropzone'),
       add: function (e, data) {
-        types = /(\.|\/)(pdf|xls|xlsx|doc|docx|txt|gif|jpe?g|png|bmp)$/i;
+        types = /(\.|\/)(pdf|xls|xlsx|doc|docx)$/i;
         file = data.files[0]
         if (types.test(file.type) || types.test(file.name)) {
           data.submit();
           var name = file.name;
           $('#document-file-name').html(name);
         }
-        else { alert(file.name + " must be XLS, XLSX, DOC, DOCX, TXT, GIF, JPEG, BMP or PNG file"); }
+        else { alert(file.name + " must be XLS, XLSX, DOC, or DOCX file"); }
       }
     });
 

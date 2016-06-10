@@ -8,15 +8,7 @@
 </head>
 <body>
 <%= render 'shared/header' %>
-
-
   <% if user_signed_in? %>
-    <% unless true #@disable_sidebar %>
-      <div class="sidebar-collapsed" id="sidebar">
-        <%= render 'shared/sidebar_button' %>
-        <%= render 'shared/sidebar' %>
-      </div>
-    <% end %>
     <% if current_user.admin? %>
       <%= render 'layouts/comment_modal' %>
     <% end %>
