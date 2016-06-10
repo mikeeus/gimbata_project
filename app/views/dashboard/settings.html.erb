@@ -2,7 +2,11 @@
 <!-- Left use info panel -->
   <div class="col-sm-4" id="user-info">
     <div class="text-center">
-      <%= image_tag 'avatars/small/avatar_default.jpg' %>
+      <% if current_user.avatar.present? %>
+        <%= image_tag current_user.avatar.url(:small) %>
+      <% else %>
+        <%= image_tag 'avatars/small/avatar_default.jpg' %>
+      <% end %>
       <h4><%= "#{current_user.first_name} #{current_user.last_name}" %></h4>
       <p><%= current_user.position %></p>
       <ul class="list-group">

@@ -1,4 +1,5 @@
 class PermissionsController < ApplicationController
+  before_action :redirect_if_not_admin
   respond_to :html, :js
   
   def create

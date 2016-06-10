@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :redirect_if_not_admin
   before_action :redirect_to_dashboard, only: [:homepage]
   skip_before_filter :authenticate_user!, only: [:homepage]
 

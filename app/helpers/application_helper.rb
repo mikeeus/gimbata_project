@@ -5,6 +5,12 @@ module ApplicationHelper
     current_user.role == "admin" ? true : false
   end
 
+  def redirect_if_not_admin
+    unless current_user.admin?
+      redirect_to root_path
+    end
+  end
+
   def redirect_unless_admin_user
     redirect_to(root_url) unless current_user.role == "admin"
   end
@@ -32,7 +38,7 @@ module ApplicationHelper
   end
   
   def full_title(page_title = '')
-    base_title = "mesabya"
+    base_title = "Trust Construction"
     if page_title.empty?
       base_title
     else
