@@ -3,17 +3,17 @@ Rails.application.routes.draw do
   root 'folders#index'
 
   resources :company, only: [:show]
-  resources :users, only: [:index, :edit, :update, :destroy] do
-    resources :permissions, only: [:create, :destroy, :index]
-    resources :comments, only: [:show, :index, :create]
-  end
+  resources :permissions, only: [:create, :destroy, :index]
+  resources :comments, only: [:index, :create]
+  
   resources :folders do
     resources :documents
   end
   
-
-  get 'dashboard'    => 'dashboard#dashboard',    as: :dashboard
-  get 'settings'     => 'dashboard#settings',     as: :settings
+  delete 'delete_user/:id' => 'users#delete',        as: :delete_user
+  get    'dashboard'       => 'dashboard#dashboard', as: :dashboard
+  get    'settings'        => 'dashboard#settings',  as: :settings
+  get    'users'           => 'users#index',         as: :users
   # get 'permissions'  => 'dashboard#permissions',  as: :user_management
 
 

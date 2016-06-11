@@ -28,24 +28,11 @@ gem 'compass-rails'
 gem 'compass'
 # Use activity feed to implement... dun dun dun... an activity feed
 gem 'public_activity'
-# # Use pdfjsviewer to view pdfs in the browser
-# gem 'pdfjs_viewer-rails'
-# # Use roo to work with spreadsheets
-# gem 'roo'
-# Use turbolinks for faster page loading
-gem 'turbolinks', '~> 5.0.0.beta'
 
-# # Use to fix jquery and turbolinks errors
-# gem 'jquery-turbolinks'
-
-# Use js-routes to create js helpers for rails routes
-gem "js-routes"
 # Use devise for user authentication
 gem 'devise'
 # Use sprockets
 gem 'sprockets', '~> 3.0'
-# Use faker to generate fake data models
-gem 'faker'
 # Use bootstrap-sass for styling
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use SCSS for stylesheets

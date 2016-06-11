@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @permission = Permission.new
   end
 
-  def destroy
+  def delete
     @user = @users.find(params[:id])
     @user.destroy
     if @user.destroy 

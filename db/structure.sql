@@ -78,8 +78,8 @@ ALTER SEQUENCE activities_id_seq OWNED BY activities.id;
 CREATE TABLE comments (
     id integer NOT NULL,
     user_id integer,
-    subject character varying NOT NULL,
-    content character varying NOT NULL,
+    subject character varying,
+    content character varying,
     commented_page character varying,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL

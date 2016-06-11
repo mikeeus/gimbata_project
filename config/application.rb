@@ -37,5 +37,7 @@ module GimbataProject
 
     # Use structure.sql as our shema
     config.active_record.schema_format = :sql
+
+    config.serve_static_files = true
   end
 end

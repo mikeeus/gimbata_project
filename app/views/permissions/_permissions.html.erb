@@ -12,7 +12,7 @@
               <% unless folder.can_be_accessed_by?(user) %>
                 <li>
                   <a href="#">
-                    <%= form_for(@permission, url: user_permissions_path(user), method: :post, remote: true ) do |f| %>
+                    <%= form_for(@permission, url: permissions_path(user), method: :post, remote: true ) do |f| %>
                       <%= hidden_field_tag 'user_id', user.id %>
                       <%= hidden_field_tag 'folder_id', folder.id %>
                       <%= f.submit folder.name, class: "btn btn-default dropdown-menu-buttons" %>

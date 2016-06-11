@@ -5,11 +5,11 @@
       Add Comment
       </div>
       <div class="modal-body">
-        <%= form_for(@comment, url: user_comments_path(current_user)) do |f| %>
+        <%= form_for(@comment, url: comments_path(current_user)) do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
 
-          <%= f.label :commented_page %>
-          <%= f.text_field :commented_page, value: request.original_url %>
+          <% f.label :commented_page %>
+          <% f.text_field :commented_page, value: request.original_url %>
 
           <%= f.label :subject %>
           <%= f.text_field :subject, class: 'form-control' %>

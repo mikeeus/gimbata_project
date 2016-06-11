@@ -8,7 +8,7 @@
         <ul class="list-group">
           <% @folders.each do |folder| %>
             <% unless folder.can_be_accessed_by?(user) %>
-              <%= form_for(@permission, url: user_permissions_path(user), remote: true ) do |f| %>
+              <%= form_for(@permission, url: permissions_path, remote: true ) do |f| %>
                 <%= hidden_field_tag 'user_id', user.id %>
                 <%= hidden_field_tag 'folder_id', folder.id %>
                 <li class="list-group-item" id="folder-<%= folder.id %>">

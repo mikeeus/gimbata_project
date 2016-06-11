@@ -6,9 +6,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.build(comment_params)
-    @comment.save
-    if @comment.save
-      redirect_to :back, notice: "Comment added"
+    unless @comment.subject == "" || @comment.content == ""
+      @comment.save
+      if @comment.save
+        redirect_to :back, notice: "Comment added"
+      end
+    else
+      redirect_to :back, notice: "Subject or content cannot be empty."
     end
   end
 
